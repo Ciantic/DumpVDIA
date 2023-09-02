@@ -240,6 +240,8 @@ def dumpVFT(vftName):
                 print("    Method %2d: AddRef" % i)
             elif "::QueryInterface" in symMap2[ptr].undName:
                 print("    Method %2d: QueryInterface" % i)
+            elif "deleting destructor'" in symMap2[ptr].undName:
+                print("    Method %2d: ~Destructor" % i)
             else:
                 # print("    Method %2d: %s (%s)" % (i, symMap2[ptr].undName, symMap2[ptr].name))
                 # print("    Method %2d: %s" % (i, symMap2[ptr].undName))
@@ -249,12 +251,20 @@ def dumpVFT(vftName):
 
 #symMap['??_7CVirtualDesktopManager@@6BIVirtualDesktopManagerInternal@@@'].pe
 
+vft_allowed = ["CVirtualDesktop", "VirtualDesktopsApi", "CVirtualDesktopManager", "CVirtualDesktopNotificationsDerived", "CVirtualDesktopNotifications", "CVirtualDesktopVisibilityPolicy"]
 vft_ordered = []
 
 for (k, _) in symMap.items():
-    if "??_7CVirtualDesktop" in k:
-        vft_ordered.append(k)
-vft_ordered.append('??_7VirtualDesktopsApi@@6B@')
+    for vft_allowed_name in vft_allowed:
+        if ("_7%s@" % vft_allowed_name) in k:
+            vft_ordered.append(k)
+            break
+    # if "??_7CVirtualDesktop" in k:
+    #     if "CVirtualDesktopBarElement" in k:
+    #         continue
+    #     print(k)
+    #     vft_ordered.append(k)
+# vft_ordered.append('??_7VirtualDesktopsApi@@6B@')
 vft_ordered.sort()
 
 
@@ -262,6 +272,50 @@ for k in vft_ordered:
     dumpVFT(k)
 
 
+"""
+??_7CVirtualDesktopManager@@6BIImmersiveWindowMessageNotification@@@
+??_7CVirtualDesktopHotkeyHandler@@6B?$ChainInterfaces@UIVirtualDesktopHotkeyHandlerPrivate@@UIVirtualDesktopHotkeyHandler@@VNil@Details@WRL@Microsoft@@V3456@V3456@V3456@V3456@V3456@V3456@V3456@@WRL@Microsoft@@@
+??_7CVirtualDesktopComponent@@6B?$ImplementsHelper@U?$RuntimeClassFlags@$01@WRL@Microsoft@@$00UIServiceProvider@@@Details@WRL@Microsoft@@@
+??_7CVirtualDesktopManager@@6BIWeakReferenceSource@@@
+??_7CVirtualDesktopHolographicViewTransitionNotification@@6B?$ImplementsHelper@U?$RuntimeClassFlags@$01@WRL@Microsoft@@$00U?$ImplementsMarker@VFtmBase@WRL@Microsoft@@@Details@23@@Details@WRL@Microsoft@@@
+??_7CVirtualDesktopManager@@6BIInspectable@@@
+??_7CVirtualDesktopHotkeyHandler@@6B?$ImplementsHelper@U?$RuntimeClassFlags@$01@WRL@Microsoft@@$00U?$ChainInterfaces@UIVirtualDesktopHotkeyHandlerPrivate2@@UIVirtualDesktopHotkeyHandlerPrivate@@VNil@Details@WRL@Microsoft@@V3456@V3456@V3456@V3456@V3456@V3456@V3456@@23@@Details@WRL@Microsoft@@@
+??_7CVirtualDesktopCollection@@6B@
+??_7CVirtualDesktopHolographicViewTransitionNotification@@6BIHolographicViewTransitionNotification@@@
+??_7CVirtualDesktop@@6B?$ImplementsHelper@U?$RuntimeClassFlags@$02@WRL@Microsoft@@$00U?$ImplementsMarker@VFtmBase@WRL@Microsoft@@@Details@23@@Details@WRL@Microsoft@@@
+??_7CVirtualDesktop@@6BIVirtualDesktopPrivate@@@
+??_7CVirtualDesktopNotificationsDerived@@6B?$ImplementsHelper@U?$RuntimeClassFlags@$01@WRL@Microsoft@@$00U?$ImplementsMarker@VFtmBase@WRL@Microsoft@@@Details@23@@Details@WRL@Microsoft@@@
+??_7CVirtualDesktopContainerElement@@6B?$Selector@U?$ImplementsHelper@U?$RuntimeClassFlags@$01@WRL@Microsoft@@$00UIObservableObjectArrayChanged@@UIVirtualDesktopContainerElement@@UIScrollableElement@@@Details@WRL@Microsoft@@U?$ImplementsHelper@U?$RuntimeClassFlags@$01@WRL@Microsoft@@$0A@U?$ImplementsMarker@VCMultitaskingViewElementBase@@@Details@23@UIObservableObjectArrayChanged@@UIVirtualDesktopContainerElement@@UIScrollableElement@@@234@@Details@WRL@Microsoft@@@
+??_7CVirtualDesktopContainerElement@@6B?$Selector@VCMultitaskingViewElementBase@@U?$ImplementsHelper@U?$RuntimeClassFlags@$01@WRL@Microsoft@@$0A@U?$ImplementsMarker@VCMultitaskingViewElementBase@@@Details@23@UIObservableObjectArrayChanged@@UIVirtualDesktopContainerElement@@UIScrollableElement@@@Details@WRL@Microsoft@@@Details@WRL@Microsoft@@@
+??_7CVirtualDesktopSwitcherService@@6BIVirtualDesktopSwitcherService@@@
+??_7CVirtualDesktopApplicationViewEventListener@@6B?$ImplementsHelper@U?$RuntimeClassFlags@$01@WRL@Microsoft@@$00U?$ImplementsMarker@VFtmBase@WRL@Microsoft@@@Details@23@@Details@WRL@Microsoft@@@
+??_7CVirtualDesktopSwitcherService@@6B?$ImplementsHelper@U?$RuntimeClassFlags@$01@WRL@Microsoft@@$00UIVirtualDesktopSwitcherInvoker@@@Details@WRL@Microsoft@@@
+??_7CVirtualDesktopVisibilityPolicy@@6B@
+??_7CVirtualDesktopContainerElement@@6BIVirtualDesktopContainerElement@@@
+??_7CVirtualDesktopLock@@6B@
+??_7CVirtualDesktop@@6B?$ChainInterfaces@UIVirtualDesktop2@@UIVirtualDesktop@@VNil@Details@WRL@Microsoft@@V3456@V3456@V3456@V3456@V3456@V3456@V3456@@WRL@Microsoft@@@
+??_7CVirtualDesktopSoftLandingHandler@@6BIVirtualDesktopSoftLandingHandler@@@
+??_7CVirtualDesktopDefaultForegroundHandler@@6B@
+??_7CVirtualDesktopApplicationViewEventListener@@6BIApplicationViewChangeListener@@@
+??_7CVirtualDesktopSoftLandingHandler@@6B?$ImplementsHelper@U?$RuntimeClassFlags@$01@WRL@Microsoft@@$00UIApplicationViewChangeListener@@@Details@WRL@Microsoft@@@
+??_7CVirtualDesktopSoftLandingHandler@@6B@
+??_7CVirtualDesktopComponent@@6B?$Selector@U?$ImplementsHelper@U?$RuntimeClassFlags@$01@WRL@Microsoft@@$00U?$ImplementsMarker@VFtmBase@WRL@Microsoft@@@Details@23@@Details@WRL@Microsoft@@U?$ImplementsHelper@U?$RuntimeClassFlags@$01@WRL@Microsoft@@$0A@U?$ImplementsMarker@VCImmersiveShellComponentWithGITSite@@@Details@23@VFtmBase@23@@234@@Details@WRL@Microsoft@@@
+??_7CVirtualDesktopManager@@6BIVirtualDesktopManagerInternal2@@@
+??_7CVirtualDesktopFactory@@6B@
+??_7CVirtualDesktopComponent@@6B?$Selector@VCImmersiveShellComponentWithGITSite@@U?$ImplementsHelper@U?$RuntimeClassFlags@$01@WRL@Microsoft@@$0A@U?$ImplementsMarker@VCImmersiveShellComponentWithGITSite@@@Details@23@VFtmBase@23@@Details@WRL@Microsoft@@@Details@WRL@Microsoft@@@
+??_7CVirtualDesktopManager@@6B?$ImplementsHelper@U?$RuntimeClassFlags@$02@WRL@Microsoft@@$00UISuspendableVirtualDesktopManager@@UIImmersiveWindowMessageNotification@@VFtmBase@23@@Details@WRL@Microsoft@@@
+??_7CVirtualDesktop@@6B?$ImplementsHelper@U?$RuntimeClassFlags@$02@WRL@Microsoft@@$00UIWeakReferenceSource@@UIVirtualDesktopPrivate@@VFtmBase@23@@Details@WRL@Microsoft@@@
+??_7CVirtualDesktopNotificationsDerived@@6B@
+??_7CVirtualDesktopManager@@6B?$ImplementsHelper@U?$RuntimeClassFlags@$02@WRL@Microsoft@@$00UIVirtualDesktopManagerInternal@@UIVirtualDesktopManagerInternal2@@UISuspendableVirtualDesktopManager@@UIImmersiveWindowMessageNotification@@VFtmBase@23@@Details@WRL@Microsoft@@@
+??_7CVirtualDesktopNotificationsDerived@@6BIVirtualDesktopNotification@@@
+??_7CVirtualDesktopComponent@@6BIImmersiveShellComponent@@@
+??_7CVirtualDesktopContainerElement@@6B?$ImplementsHelper@U?$RuntimeClassFlags@$01@WRL@Microsoft@@$00UIScrollableElement@@@Details@WRL@Microsoft@@@
+??_7CVirtualDesktopSwitcherService@@6B@
+??_7CVirtualDesktop@@6B@
+??_7CVirtualDesktopManager@@6B?$ImplementsHelper@U?$RuntimeClassFlags@$02@WRL@Microsoft@@$00U?$ImplementsMarker@VFtmBase@WRL@Microsoft@@@Details@23@@Details@WRL@Microsoft@@@
+??_7CVirtualDesktopManager@@6B?$ImplementsHelper@U?$RuntimeClassFlags@$02@WRL@Microsoft@@$00U?$ChainInterfaces@UIVirtualDesktopManagerPrivate@@UIVirtualDesktopManagerInternal@@UIVirtualDesktopManagerInternal2@@VNil@Details@WRL@Microsoft@@V4567@V4567@V4567@V4567@V4567@V4567@@23@UIWeakReferenceSource@@UIVirtualDesktopManagerInternal@@UIVirtualDesktopManagerInternal2@@UISuspendableVirtualDesktopManager@@UIImmersiveWindowMessageNotification@@VFtmBase@23@@Details@WRL@Microsoft@@@
+??_7CVirtualDesktopForegroundPolicy@@6B@
 
+"""
 
 

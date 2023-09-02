@@ -52,7 +52,7 @@ Dumping vftable: const CVirtualDesktop::`vftable'
     Method  3: GetIids(unsigned long * __ptr64,struct _GUID * __ptr64 * __ptr64) __ptr64
     Method  4: GetRuntimeClassName(struct HSTRING__ * __ptr64 * __ptr64) __ptr64
     Method  5: GetTrustLevel(enum TrustLevel * __ptr64) __ptr64
-    Method  6: public: virtual void * __ptr64 __cdecl CVirtualDesktop::`scalar deleting destructor'(unsigned int) __ptr64
+    Method  6: ~Destructor
 
 
 Dumping vftable: const CVirtualDesktop::`vftable'{for `IVirtualDesktopPrivate'}
@@ -65,430 +65,6 @@ Dumping vftable: const CVirtualDesktop::`vftable'{for `IVirtualDesktopPrivate'}
     Method  6: public: virtual long __cdecl CVirtualDesktop::GetWallpaperInternal(struct HSTRING__ * __ptr64 * __ptr64) __ptr64
     Method  7: public: virtual long __cdecl CVirtualDesktop::SetIsRemoteInternal(int) __ptr64
     Method  8: public: virtual long __cdecl CVirtualDesktop::GetIsRemoteInternal(int * __ptr64) __ptr64
-
-
-Dumping vftable: const CVirtualDesktopApplicationViewEventListener::`vftable'{for `Microsoft::WRL::Details::ImplementsHelper<struct Microsoft::WRL::RuntimeClassFlags<2>,1,struct Microsoft::WRL::Details::ImplementsMarker<class Microsoft::WRL::FtmBase> >'}
-    Method  0: QueryInterface
-    Method  1: AddRef
-    Method  2: Release
-    Method  3: public: virtual long __cdecl Microsoft::WRL::FtmBase::GetUnmarshalClass(struct _GUID const & __ptr64,void * __ptr64,unsigned long,void * __ptr64,unsigned long,struct _GUID * __ptr64) __ptr64
-    Method  4: public: virtual long __cdecl Microsoft::WRL::FtmBase::GetMarshalSizeMax(struct _GUID const & __ptr64,void * __ptr64,unsigned long,void * __ptr64,unsigned long,unsigned long * __ptr64) __ptr64
-    Method  5: public: virtual long __cdecl Microsoft::WRL::FtmBase::MarshalInterface(struct IStream * __ptr64,struct _GUID const & __ptr64,void * __ptr64,unsigned long,void * __ptr64,unsigned long) __ptr64
-    Method  6: public: virtual long __cdecl Microsoft::WRL::FtmBase::UnmarshalInterface(struct IStream * __ptr64,struct _GUID const & __ptr64,void * __ptr64 * __ptr64) __ptr64
-    Method  7: Release
-    Method  8: public: virtual long __cdecl Microsoft::WRL::FtmBase::DisconnectObject(unsigned long) __ptr64
-
-
-Dumping vftable: const CVirtualDesktopApplicationViewEventListener::`vftable'{for `IApplicationViewChangeListener'}
-    Method  0: QueryInterface
-    Method  1: AddRef
-    Method  2: Release
-    Method  3: public: virtual long __cdecl CVirtualDesktopApplicationViewEventListener::OnApplicationViewChanged(struct IApplicationView * __ptr64,enum APPLICATION_VIEW_CHANGE,struct IUnknown * __ptr64) __ptr64
-    Method  4: public: virtual void * __ptr64 __cdecl CVirtualDesktopApplicationViewEventListener::`vector deleting destructor'(unsigned int) __ptr64
-
-
-Dumping vftable: const CVirtualDesktopBarElement::`vftable'{for `Microsoft::WRL::Details::Selector<struct Microsoft::WRL::Details::ImplementsHelper<struct Microsoft::WRL::RuntimeClassFlags<2>,1,struct IVirtualDesktopBarElement>,struct Microsoft::WRL::Details::ImplementsHelper<struct Microsoft::WRL::RuntimeClassFlags<2>,0,struct Microsoft::WRL::Details::ImplementsMarker<class CMultitaskingViewElementBase>,struct IVirtualDesktopBarElement> >'}
-    Method  0: QueryInterface
-    Method  1: AddRef
-    Method  2: Release
-    Method  3: public: virtual void __cdecl CVirtualDesktopBarElement::FrameRectChanged(struct tagRECT const & __ptr64) __ptr64
-    Method  4: public: virtual long __cdecl CVirtualDesktopBarElement::SetComponentPosition(enum VirtualDesktopContainerComponent,struct tagRECT const & __ptr64,enum DCompThumbnailAnimation,struct IUIAnimationStoryboardEventHandler2 * __ptr64) __ptr64
-    Method  5: public: virtual long __cdecl CVirtualDesktopBarElement::SetComponentOpacity(enum VirtualDesktopContainerComponent,double,enum DCompThumbnailAnimation,struct IUIAnimationStoryboardEventHandler2 * __ptr64) __ptr64
-    Method  6: public: virtual void __cdecl CVirtualDesktopBarElement::ScrollCurrentDesktopIntoView(void) __ptr64
-    Method  7: public: virtual class Microsoft::WRL::ComPtr<struct IVirtualDesktopNewElement> __cdecl CVirtualDesktopBarElement::GetNewDesktopButton(void) __ptr64
-    Method  8: public: virtual class Microsoft::WRL::ComPtr<struct IVirtualDesktopNewElement> __cdecl CVirtualDesktopBarElement::GetNewTimelineButton(void) __ptr64
-
-
-Dumping vftable: const CVirtualDesktopBarElement::`vftable'{for `Microsoft::WRL::Details::Selector<class CMultitaskingViewElementBase,struct Microsoft::WRL::Details::ImplementsHelper<struct Microsoft::WRL::RuntimeClassFlags<2>,0,struct Microsoft::WRL::Details::ImplementsMarker<class CMultitaskingViewElementBase>,struct IVirtualDesktopBarElement> >'}
-    Method  0: QueryInterface
-    Method  1: AddRef
-    Method  2: Release
-    Method  3: public: virtual class Microsoft::WRL::ComPtr<struct IMultitaskingViewElement> __cdecl CMultitaskingViewElementBase::GetParent(void) __ptr64
-    Method  4: public: virtual long __cdecl CMultitaskingViewElementBase::SetParent(struct IMultitaskingViewElement * __ptr64) __ptr64
-    Method  5: public: virtual class Microsoft::WRL::ComPtr<struct IDCompThumbnail> __cdecl CMultitaskingViewElementBase::GetThumbnailForChildren(void) __ptr64
-    Method  6: public: virtual class Microsoft::WRL::ComPtr<struct IDCompThumbnail> __cdecl CMultitaskingViewElementBase::GetRootThumbnail(void) __ptr64
-    Method  7: public: virtual long __cdecl CMultitaskingViewElementBase::GetChildren(struct IObjectArray * __ptr64 * __ptr64) __ptr64
-    Method  8: public: virtual long __cdecl CMultitaskingViewElementBase::AddChild(struct IMultitaskingViewElement * __ptr64) __ptr64
-    Method  9: public: virtual long __cdecl CMultitaskingViewElementBase::RemoveChild(struct IMultitaskingViewElement * __ptr64,bool) __ptr64
-    Method 10: public: virtual void __cdecl CMultitaskingViewElementBase::RemoveAllDescendants(void) __ptr64
-    Method 11: public: virtual struct Geometry::CRect __cdecl CMultitaskingViewElementBase::GetPosition(void) __ptr64
-    Method 12: public: virtual struct Geometry::CRect __cdecl IMultitaskingViewElement::GetVisibleBounds(void) __ptr64
-    Method 13: public: virtual void __cdecl CSwitchItemGrid::SetPosition(struct Geometry::CRect const & __ptr64) __ptr64
-    Method 14: public: virtual bool __cdecl CVirtualDesktopBarElement::HitTest(struct Geometry::CPoint const & __ptr64) __ptr64
-    Method 15: public: virtual class ElementMapping __cdecl CMultitaskingViewElementBase::GetCoordinateMapping(void) __ptr64
-    Method 16: public: virtual class Microsoft::WRL::ComPtr<struct IMultitaskingViewElement> __cdecl CMultitaskingViewElementBase::GetElementFromPoint(struct Geometry::CPoint const & __ptr64) __ptr64
-    Method 17: public: virtual void __cdecl CMultitaskingViewElementBase::Show(void) __ptr64
-    Method 18: public: virtual void __cdecl CMultitaskingViewElementBase::Hide(void) __ptr64
-    Method 19: public: virtual bool __cdecl CMultitaskingViewElementBase::IsVisible(void) __ptr64
-    Method 20: public: virtual bool __cdecl CMultitaskingViewElementBase::IsNavigable(enum NavigationType) __ptr64
-    Method 21: public: virtual bool __cdecl CMultitaskingViewElementBase::IsAccessible(void) __ptr64
-    Method 22: public: virtual enum ElementStateFlags __cdecl CMultitaskingViewElementBase::GetElementState(void) __ptr64
-    Method 23: public: virtual void __cdecl CMultitaskingViewElementBase::SetEventSink(struct IMultitaskingViewElementEvents * __ptr64) __ptr64
-    Method 24: public: virtual bool __cdecl CMultitaskingViewElementBase::PointerDown(enum PointerButton,class MultitaskingViewPointerInputArgs const & __ptr64) __ptr64
-    Method 25: public: virtual void __cdecl CMultitaskingViewElementBase::PointerMove(class MultitaskingViewPointerInputArgs const & __ptr64) __ptr64
-    Method 26: public: virtual bool __cdecl CMultitaskingViewElementBase::PointerUp(enum PointerButton,class MultitaskingViewPointerInputArgs const & __ptr64) __ptr64
-    Method 27: public: virtual void __cdecl CMultitaskingViewElementBase::PointerLeave(void) __ptr64
-    Method 28: public: virtual bool __cdecl CMultitaskingViewElementBase::PointerHover(class MultitaskingViewPointerInputArgs const & __ptr64) __ptr64
-    Method 29: public: virtual void __cdecl CMultitaskingViewElementBase::LostCapture(void) __ptr64
-    Method 30: public: virtual bool __cdecl CVirtualDesktopBarElement::KeyDown(unsigned int,enum ModifierKeys) __ptr64
-    Method 31: public: virtual bool __cdecl CMultitaskingViewElementBase::KeyUp(unsigned int,enum ModifierKeys) __ptr64
-    Method 32: public: virtual void __cdecl CMultitaskingViewElementBase::ContextMenu(class ContextMenuArgs const & __ptr64) __ptr64
-    Method 33: public: virtual bool __cdecl CMultitaskingViewElementBase::HasContextMenu(void) __ptr64
-    Method 34: public: virtual class Microsoft::WRL::ComPtr<struct IMultitaskingViewElement> __cdecl CMultitaskingViewElementBase::Navigate(struct IMultitaskingViewElement * __ptr64,unsigned int,enum NavigationType) __ptr64
-    Method 35: public: virtual class Microsoft::WRL::ComPtr<struct IMultitaskingViewElement> __cdecl CMultitaskingViewElementBase::GetChildFocus(void) __ptr64
-    Method 36: public: virtual void __cdecl CMultitaskingViewElementBase::SetChildFocus(struct IMultitaskingViewElement * __ptr64) __ptr64
-    Method 37: public: virtual void __cdecl CVirtualDesktopBarElement::SetFocused(bool) __ptr64
-    Method 38: public: virtual bool __cdecl CSwitchItemElement::IsFocused(void) __ptr64
-    Method 39: public: virtual bool __cdecl CMultitaskingViewElementBase::InvokeElement(void) __ptr64
-    Method 40: public: virtual bool __cdecl CMultitaskingViewElementBase::InvokeFocusedElement(void) __ptr64
-    Method 41: public: virtual struct HWND__ * __ptr64 __cdecl CMultitaskingViewElementBase::GetRootWindow(void) __ptr64
-    Method 42: public: virtual class Microsoft::WRL::ComPtr<struct IMultitaskingViewElement> __cdecl CMultitaskingViewElementBase::GetSelectedChild(void) __ptr64
-    Method 43: public: virtual bool __cdecl CMultitaskingViewElementBase::IsSelected(void) __ptr64
-    Method 44: public: virtual long __cdecl CMultitaskingViewElementBase::Select(void) __ptr64
-    Method 45: public: virtual long __cdecl CMultitaskingViewElementBase::GetAccessibleName(unsigned short * __ptr64 * __ptr64) __ptr64
-    Method 46: public: virtual long __cdecl CMultitaskingViewElementBase::GetAutomationId(unsigned short * __ptr64 * __ptr64) __ptr64
-    Method 47: public: virtual long __cdecl CMultitaskingViewElementBase::GetAccessibleObject(struct _GUID const & __ptr64,void * __ptr64 * __ptr64) __ptr64
-    Method 48: public: virtual class Microsoft::WRL::ComPtr<struct IAnimationCoordinator> __cdecl CMultitaskingViewElementBase::GetAnimationCoordinator(void) __ptr64
-    Method 49: public: virtual void __cdecl CMultitaskingViewElementBase::SetAnimationCoordinator(struct IAnimationCoordinator * __ptr64) __ptr64
-    Method 50: public: virtual enum AnimationCoordinatorItemType __cdecl CVirtualDesktopBarElement::GetItemType(void) __ptr64
-    Method 51: public: virtual bool __cdecl CMultitaskingViewElementBase::IsEmpty(void) __ptr64
-    Method 52: public: virtual void __cdecl CMultitaskingViewElementBase::ChildBecameEmpty(void) __ptr64
-    Method 53: public: virtual class Microsoft::WRL::ComPtr<struct IMultitaskingViewDragProvider> __cdecl CMultitaskingViewElementBase::GetDragProvider(void) __ptr64
-    Method 54: public: virtual void __cdecl CMultitaskingViewElementBase::DragStarted(struct IUnknown * __ptr64) __ptr64
-    Method 55: public: virtual void __cdecl CMultitaskingViewElementBase::DragEnding(struct IUnknown * __ptr64,enum DropEffect) __ptr64
-    Method 56: public: virtual void __cdecl CMultitaskingViewElementBase::DragEnded(struct IUnknown * __ptr64,enum DropEffect) __ptr64
-    Method 57: public: virtual enum DropEffect __cdecl CMultitaskingViewElementBase::DragOver(class DragAndDropArgs * __ptr64,class MultitaskingViewPointerInputArgs const & __ptr64) __ptr64
-    Method 58: public: virtual void __cdecl CMultitaskingViewElementBase::DragLeave(void) __ptr64
-    Method 59: public: virtual enum DropEffect __cdecl CMultitaskingViewElementBase::Drop(class DragAndDropArgs * __ptr64,class MultitaskingViewPointerInputArgs const & __ptr64) __ptr64
-    Method 60: public: virtual void __cdecl CMultitaskingViewElementBase::ThumbnailSizeChanged(void * __ptr64) __ptr64
-    Method 61: public: virtual long __cdecl CMultitaskingViewElementBase::AttachThumbnail(struct IDCompThumbnail * __ptr64) __ptr64
-    Method 62: public: virtual long __cdecl CMultitaskingViewElementBase::Start2DAnimation(enum DCompThumbnailAnimation,struct IUIAnimationStoryboardEventHandler2 * __ptr64) __ptr64
-    Method 63: public: virtual long __cdecl CMultitaskingViewElementBase::SetOpacity(double,enum DCompThumbnailAnimation,struct IUIAnimationStoryboardEventHandler2 * __ptr64) __ptr64
-    Method 64: public: virtual void __cdecl CMultitaskingViewElementBase::SetPosition(struct Geometry::CRect const & __ptr64,enum DCompThumbnailAnimation,struct IUIAnimationStoryboardEventHandler2 * __ptr64) __ptr64
-    Method 65: protected: virtual void __cdecl CMultitaskingViewElementBase::v_LayoutChildren(enum DCompThumbnailAnimation,struct IUIAnimationStoryboardEventHandler2 * __ptr64) __ptr64
-    Method 66: protected: virtual void __cdecl CVirtualDesktopBarElement::v_LayoutChildren(void) __ptr64
-    Method 67: protected: virtual class Microsoft::WRL::ComPtr<struct IMultitaskingViewElement> __cdecl CVirtualDesktopBarElement::v_NavigateFromChildIndex(unsigned __int64,unsigned int,enum NavigationType) __ptr64
-    Method 68: protected: virtual bool __cdecl CMultitaskingViewElementBase::v_PreHover(class MultitaskingViewPointerInputArgs const & __ptr64) __ptr64
-    Method 69: protected: virtual bool __cdecl CMultitaskingViewElementBase::v_OnClick(enum PointerButton,class MultitaskingViewPointerInputArgs const & __ptr64) __ptr64
-    Method 70: protected: virtual void __cdecl CMultitaskingViewElementBase::v_OnPointerMove(class MultitaskingViewPointerInputArgs const & __ptr64) __ptr64
-    Method 71: protected: virtual void __cdecl CMultitaskingViewElementBase::v_OnPointerLeave(void) __ptr64
-    Method 72: protected: virtual long __cdecl CMultitaskingViewElementBase::v_AddChildToArray(struct IMultitaskingViewElement * __ptr64) __ptr64
-    Method 73: protected: virtual long __cdecl CMultitaskingViewElementBase::v_InitAccessibleObject(struct WeakReference::IWeakReference * __ptr64,struct _GUID const & __ptr64,void * __ptr64 * __ptr64) __ptr64
-    Method 74: protected: virtual bool __cdecl CMultitaskingViewElementBase::v_InvokeElement(void) __ptr64
-    Method 75: protected: virtual void __cdecl CMultitaskingViewElementBase::v_ContextMenu(class ContextMenuArgs const & __ptr64) __ptr64
-    Method 76: protected: virtual bool __cdecl CVirtualDesktopBarElement::v_IsContainer(void) __ptr64
-    Method 77: protected: virtual enum DropEffect __cdecl CVirtualDesktopBarElement::v_OnDragOver(class DragAndDropArgs * __ptr64,class MultitaskingViewPointerInputArgs const & __ptr64) __ptr64
-    Method 78: protected: virtual void __cdecl CMultitaskingViewElementBase::v_OnDragLeave(void) __ptr64
-    Method 79: protected: virtual enum DropEffect __cdecl CMultitaskingViewElementBase::v_OnDrop(class DragAndDropArgs * __ptr64,class MultitaskingViewPointerInputArgs const & __ptr64) __ptr64
-    Method 80: protected: virtual void __cdecl CMultitaskingViewElementBase::v_StartDrag(struct Geometry::CPoint const & __ptr64) __ptr64
-    Method 81: public: virtual void * __ptr64 __cdecl CVirtualDesktopBarElement::`vector deleting destructor'(unsigned int) __ptr64
-
-
-Dumping vftable: const CVirtualDesktopCollection::`vftable'
-    Method  0: QueryInterface
-    Method  1: AddRef
-    Method  2: Release
-    Method  3: public: virtual unsigned __int64 __cdecl CVirtualDesktopCollection::GetCount(void) __ptr64
-    Method  4: public: virtual bool __cdecl CVirtualDesktopCollection::ContainsVirtualDesktop(struct IVirtualDesktop * __ptr64) __ptr64
-    Method  5: public: virtual long __cdecl CVirtualDesktopCollection::GetAsArray(struct _GUID const & __ptr64,void * __ptr64 * __ptr64) __ptr64
-    Method  6: public: virtual long __cdecl CVirtualDesktopCollection::AddVirtualDesktop(struct _GUID const & __ptr64,struct IVirtualDesktop * __ptr64 * __ptr64) __ptr64
-    Method  7: public: virtual long __cdecl CVirtualDesktopCollection::AddVirtualDesktop(struct IVirtualDesktop * __ptr64 * __ptr64) __ptr64
-    Method  8: public: virtual long __cdecl CVirtualDesktopCollection::RemoveVirtualDesktop(struct IVirtualDesktop * __ptr64) __ptr64
-    Method  9: public: virtual long __cdecl CVirtualDesktopCollection::GetAdjacentVirtualDesktop(struct IVirtualDesktop * __ptr64,unsigned int,struct _GUID const & __ptr64,void * __ptr64 * __ptr64) __ptr64
-    Method 10: public: virtual long __cdecl CVirtualDesktopCollection::DetermineRelativeDirection(struct IVirtualDesktop * __ptr64,struct IVirtualDesktop * __ptr64,unsigned int * __ptr64) __ptr64
-    Method 11: public: virtual long __cdecl CVirtualDesktopCollection::FindDesktop(struct _GUID const & __ptr64,struct IVirtualDesktop * __ptr64 * __ptr64) __ptr64
-    Method 12: public: virtual class Microsoft::WRL::ComPtr<struct IVirtualDesktop> __cdecl CVirtualDesktopCollection::GetUniversalDesktop(void) __ptr64
-    Method 13: public: virtual long __cdecl CVirtualDesktopCollection::GetDesktopIndex(struct IVirtualDesktop * __ptr64,unsigned __int64 * __ptr64) __ptr64
-    Method 14: public: virtual long __cdecl CVirtualDesktopCollection::MoveDesktop(struct IVirtualDesktop * __ptr64,unsigned __int64) __ptr64
-    Method 15: public: virtual long __cdecl CVirtualDesktopCollection::AddRemoteDesktop(struct HSTRING__ * __ptr64,struct IVirtualDesktop * __ptr64 * __ptr64) __ptr64
-    Method 16: public: virtual void __cdecl CVirtualDesktopCollection::SetIsRemoteSession(bool) __ptr64
-    Method 17: public: virtual long __cdecl CVirtualDesktopCollection::GetLocalVirtualDesktopsAsArray(struct _GUID const & __ptr64,void * __ptr64 * __ptr64) __ptr64
-    Method 18: public: virtual void * __ptr64 __cdecl CVirtualDesktopCollection::`vector deleting destructor'(unsigned int) __ptr64
-
-
-Dumping vftable: const CVirtualDesktopComponent::`vftable'{for `Microsoft::WRL::Details::ImplementsHelper<struct Microsoft::WRL::RuntimeClassFlags<2>,1,struct IServiceProvider>'}
-    Method  0: QueryInterface
-    Method  1: AddRef
-    Method  2: Release
-    Method  3: public: virtual long __cdecl CImmersiveShellComponent::QueryService(struct _GUID const & __ptr64,struct _GUID const & __ptr64,void * __ptr64 * __ptr64) __ptr64
-
-
-Dumping vftable: const CVirtualDesktopComponent::`vftable'{for `Microsoft::WRL::Details::Selector<struct Microsoft::WRL::Details::ImplementsHelper<struct Microsoft::WRL::RuntimeClassFlags<2>,1,struct Microsoft::WRL::Details::ImplementsMarker<class Microsoft::WRL::FtmBase> >,struct Microsoft::WRL::Details::ImplementsHelper<struct Microsoft::WRL::RuntimeClassFlags<2>,0,struct Microsoft::WRL::Details::ImplementsMarker<class CImmersiveShellComponentWithGITSite>,class Microsoft::WRL::FtmBase> >'}
-    Method  0: QueryInterface
-    Method  1: AddRef
-    Method  2: Release
-    Method  3: public: virtual long __cdecl Microsoft::WRL::FtmBase::GetUnmarshalClass(struct _GUID const & __ptr64,void * __ptr64,unsigned long,void * __ptr64,unsigned long,struct _GUID * __ptr64) __ptr64
-    Method  4: public: virtual long __cdecl Microsoft::WRL::FtmBase::GetMarshalSizeMax(struct _GUID const & __ptr64,void * __ptr64,unsigned long,void * __ptr64,unsigned long,unsigned long * __ptr64) __ptr64
-    Method  5: public: virtual long __cdecl Microsoft::WRL::FtmBase::MarshalInterface(struct IStream * __ptr64,struct _GUID const & __ptr64,void * __ptr64,unsigned long,void * __ptr64,unsigned long) __ptr64
-    Method  6: public: virtual long __cdecl Microsoft::WRL::FtmBase::UnmarshalInterface(struct IStream * __ptr64,struct _GUID const & __ptr64,void * __ptr64 * __ptr64) __ptr64
-    Method  7: Release
-    Method  8: public: virtual long __cdecl Microsoft::WRL::FtmBase::DisconnectObject(unsigned long) __ptr64
-
-
-Dumping vftable: const CVirtualDesktopComponent::`vftable'{for `Microsoft::WRL::Details::Selector<class CImmersiveShellComponentWithGITSite,struct Microsoft::WRL::Details::ImplementsHelper<struct Microsoft::WRL::RuntimeClassFlags<2>,0,struct Microsoft::WRL::Details::ImplementsMarker<class CImmersiveShellComponentWithGITSite>,class Microsoft::WRL::FtmBase> >'}
-    Method  0: QueryInterface
-    Method  1: AddRef
-    Method  2: Release
-    Method  3: public: virtual long __cdecl CWRLObjectWithGITSite::SetSite(struct IUnknown * __ptr64) __ptr64
-    Method  4: public: virtual long __cdecl CWRLObjectWithGITSite::GetSite(struct _GUID const & __ptr64,void * __ptr64 * __ptr64) __ptr64
-
-
-Dumping vftable: const CVirtualDesktopComponent::`vftable'{for `IImmersiveShellComponent'}
-    Method  0: QueryInterface
-    Method  1: AddRef
-    Method  2: Release
-    Method  3: public: virtual long __cdecl CImmersiveShellComponent::PublishServices(struct IServiceProvider * __ptr64,struct IProfferService * __ptr64) __ptr64
-    Method  4: public: virtual long __cdecl CVirtualDesktopComponent::SubscribeToServices(struct IServiceProvider * __ptr64) __ptr64
-    Method  5: public: virtual long __cdecl CImmersiveShellComponent::PerformDelayedInitialization(void) __ptr64
-    Method  6: public: virtual long __cdecl CVirtualDesktopComponent::UnsubscribeFromServices(struct IServiceProvider * __ptr64) __ptr64
-    Method  7: public: virtual long __cdecl CImmersiveShellComponent::ShutdownServices(struct IProfferService * __ptr64) __ptr64
-    Method  8: [thunk]:public: virtual void * __ptr64 __cdecl CVirtualDesktopComponent::`vector deleting destructor'`adjustor{40}' (unsigned int) __ptr64
-    Method  9: protected: virtual long __cdecl CImmersiveShellComponent::v_QueryService(struct _GUID const & __ptr64,struct _GUID const & __ptr64,void * __ptr64 * __ptr64) __ptr64
-    Method 10: public: virtual long __cdecl WindowingEnvironmentManager::v_PublishServices(struct IServiceProvider * __ptr64,struct IProfferService * __ptr64) __ptr64
-    Method 11: protected: virtual long __cdecl CImmersiveShellComponent::v_ShutdownServices(struct IProfferService * __ptr64) __ptr64
-    Method 12: protected: virtual long __cdecl CImmersiveShellComponentWithGITSite::v_DelegatingQueryService(struct _GUID const & __ptr64,struct _GUID const & __ptr64,void * __ptr64 * __ptr64) __ptr64
-
-
-Dumping vftable: const CVirtualDesktopContainerElement::`vftable'{for `Microsoft::WRL::Details::ImplementsHelper<struct Microsoft::WRL::RuntimeClassFlags<2>,1,struct IScrollableElement>'}
-    Method  0: QueryInterface
-    Method  1: AddRef
-    Method  2: Release
-    Method  3: public: virtual bool __cdecl CVirtualDesktopContainerElement::CanScroll(void) __ptr64
-    Method  4: public: virtual struct Geometry::CRect __cdecl CVirtualDesktopContainerElement::GetVisibleRect(void) __ptr64
-    Method  5: public: virtual struct Geometry::CRect __cdecl CVirtualDesktopContainerElement::GetTotalRect(void) __ptr64
-    Method  6: public: virtual int __cdecl CVirtualDesktopContainerElement::GetScrollIncrement(void) __ptr64
-    Method  7: public: virtual void __cdecl CVirtualDesktopContainerElement::NotifyVisibleRectChanged(struct tagRECT const & __ptr64) __ptr64
-    Method  8: public: virtual void __cdecl CVirtualDesktopContainerElement::NotifyScrollingChanged(bool) __ptr64
-    Method  9: QueryInterface
-    Method 10: AddRef
-    Method 11: Release
-    Method 12: Unknown (0x573BC0)
-    Method 13: Unknown (0x1A5B70)
-    Method 14: Unknown (0x572A50)
-
-
-Dumping vftable: const CVirtualDesktopContainerElement::`vftable'{for `Microsoft::WRL::Details::Selector<struct Microsoft::WRL::Details::ImplementsHelper<struct Microsoft::WRL::RuntimeClassFlags<2>,1,struct IObservableObjectArrayChanged,struct IVirtualDesktopContainerElement,struct IScrollableElement>,struct Microsoft::WRL::Details::ImplementsHelper<struct Microsoft::WRL::RuntimeClassFlags<2>,0,struct Microsoft::WRL::Details::ImplementsMarker<class CMultitaskingViewElementBase>,struct IObservableObjectArrayChanged,struct IVirtualDesktopContainerElement,struct IScrollableElement> >'}
-    Method  0: QueryInterface
-    Method  1: AddRef
-    Method  2: Release
-    Method  3: public: virtual void __cdecl CVirtualDesktopContainerElement::ItemAdded(struct IObservableObjectArray * __ptr64,struct IObservableItem * __ptr64) __ptr64
-    Method  4: public: virtual void __cdecl CVirtualDesktopContainerElement::ItemRemoved(struct IObservableObjectArray * __ptr64,struct IObservableItem * __ptr64) __ptr64
-
-
-Dumping vftable: const CVirtualDesktopContainerElement::`vftable'{for `Microsoft::WRL::Details::Selector<class CMultitaskingViewElementBase,struct Microsoft::WRL::Details::ImplementsHelper<struct Microsoft::WRL::RuntimeClassFlags<2>,0,struct Microsoft::WRL::Details::ImplementsMarker<class CMultitaskingViewElementBase>,struct IObservableObjectArrayChanged,struct IVirtualDesktopContainerElement,struct IScrollableElement> >'}
-    Method  0: QueryInterface
-    Method  1: AddRef
-    Method  2: Release
-    Method  3: public: virtual class Microsoft::WRL::ComPtr<struct IMultitaskingViewElement> __cdecl CMultitaskingViewElementBase::GetParent(void) __ptr64
-    Method  4: public: virtual long __cdecl CMultitaskingViewElementBase::SetParent(struct IMultitaskingViewElement * __ptr64) __ptr64
-    Method  5: public: virtual class Microsoft::WRL::ComPtr<struct IDCompThumbnail> __cdecl CMultitaskingViewElementBase::GetThumbnailForChildren(void) __ptr64
-    Method  6: public: virtual class Microsoft::WRL::ComPtr<struct IDCompThumbnail> __cdecl CMultitaskingViewElementBase::GetRootThumbnail(void) __ptr64
-    Method  7: public: virtual long __cdecl CMultitaskingViewElementBase::GetChildren(struct IObjectArray * __ptr64 * __ptr64) __ptr64
-    Method  8: public: virtual long __cdecl CMultitaskingViewElementBase::AddChild(struct IMultitaskingViewElement * __ptr64) __ptr64
-    Method  9: public: virtual long __cdecl CMultitaskingViewElementBase::RemoveChild(struct IMultitaskingViewElement * __ptr64,bool) __ptr64
-    Method 10: public: virtual void __cdecl CMultitaskingViewElementBase::RemoveAllDescendants(void) __ptr64
-    Method 11: public: virtual struct Geometry::CRect __cdecl CMultitaskingViewElementBase::GetPosition(void) __ptr64
-    Method 12: public: virtual struct Geometry::CRect __cdecl IMultitaskingViewElement::GetVisibleBounds(void) __ptr64
-    Method 13: public: virtual void __cdecl CSwitchItemGrid::SetPosition(struct Geometry::CRect const & __ptr64) __ptr64
-    Method 14: public: virtual bool __cdecl CVirtualDesktopContainerElement::HitTest(struct Geometry::CPoint const & __ptr64) __ptr64
-    Method 15: public: virtual class ElementMapping __cdecl CMultitaskingViewElementBase::GetCoordinateMapping(void) __ptr64
-    Method 16: public: virtual class Microsoft::WRL::ComPtr<struct IMultitaskingViewElement> __cdecl CMultitaskingViewElementBase::GetElementFromPoint(struct Geometry::CPoint const & __ptr64) __ptr64
-    Method 17: public: virtual void __cdecl CMultitaskingViewElementBase::Show(void) __ptr64
-    Method 18: public: virtual void __cdecl CMultitaskingViewElementBase::Hide(void) __ptr64
-    Method 19: public: virtual bool __cdecl CMultitaskingViewElementBase::IsVisible(void) __ptr64
-    Method 20: public: virtual bool __cdecl CMultitaskingViewElementBase::IsNavigable(enum NavigationType) __ptr64
-    Method 21: public: virtual bool __cdecl CMultitaskingViewElementBase::IsAccessible(void) __ptr64
-    Method 22: public: virtual enum ElementStateFlags __cdecl CMultitaskingViewElementBase::GetElementState(void) __ptr64
-    Method 23: public: virtual void __cdecl CMultitaskingViewElementBase::SetEventSink(struct IMultitaskingViewElementEvents * __ptr64) __ptr64
-    Method 24: public: virtual bool __cdecl CMultitaskingViewElementBase::PointerDown(enum PointerButton,class MultitaskingViewPointerInputArgs const & __ptr64) __ptr64
-    Method 25: public: virtual void __cdecl CMultitaskingViewElementBase::PointerMove(class MultitaskingViewPointerInputArgs const & __ptr64) __ptr64
-    Method 26: public: virtual bool __cdecl CMultitaskingViewElementBase::PointerUp(enum PointerButton,class MultitaskingViewPointerInputArgs const & __ptr64) __ptr64
-    Method 27: public: virtual void __cdecl CMultitaskingViewElementBase::PointerLeave(void) __ptr64
-    Method 28: public: virtual bool __cdecl CMultitaskingViewElementBase::PointerHover(class MultitaskingViewPointerInputArgs const & __ptr64) __ptr64
-    Method 29: public: virtual void __cdecl CMultitaskingViewElementBase::LostCapture(void) __ptr64
-    Method 30: public: virtual bool __cdecl CVirtualDesktopContainerElement::KeyDown(unsigned int,enum ModifierKeys) __ptr64
-    Method 31: public: virtual bool __cdecl CMultitaskingViewElementBase::KeyUp(unsigned int,enum ModifierKeys) __ptr64
-    Method 32: public: virtual void __cdecl CMultitaskingViewElementBase::ContextMenu(class ContextMenuArgs const & __ptr64) __ptr64
-    Method 33: public: virtual bool __cdecl CMultitaskingViewElementBase::HasContextMenu(void) __ptr64
-    Method 34: public: virtual class Microsoft::WRL::ComPtr<struct IMultitaskingViewElement> __cdecl CMultitaskingViewElementBase::Navigate(struct IMultitaskingViewElement * __ptr64,unsigned int,enum NavigationType) __ptr64
-    Method 35: public: virtual class Microsoft::WRL::ComPtr<struct IMultitaskingViewElement> __cdecl CMultitaskingViewElementBase::GetChildFocus(void) __ptr64
-    Method 36: public: virtual void __cdecl CVirtualDesktopContainerElement::SetChildFocus(struct IMultitaskingViewElement * __ptr64) __ptr64
-    Method 37: public: virtual void __cdecl CVirtualDesktopBarElement::SetFocused(bool) __ptr64
-    Method 38: public: virtual bool __cdecl CSwitchItemElement::IsFocused(void) __ptr64
-    Method 39: public: virtual bool __cdecl CMultitaskingViewElementBase::InvokeElement(void) __ptr64
-    Method 40: public: virtual bool __cdecl CMultitaskingViewElementBase::InvokeFocusedElement(void) __ptr64
-    Method 41: public: virtual struct HWND__ * __ptr64 __cdecl CMultitaskingViewElementBase::GetRootWindow(void) __ptr64
-    Method 42: public: virtual class Microsoft::WRL::ComPtr<struct IMultitaskingViewElement> __cdecl CVirtualDesktopContainerElement::GetSelectedChild(void) __ptr64
-    Method 43: public: virtual bool __cdecl CMultitaskingViewElementBase::IsSelected(void) __ptr64
-    Method 44: public: virtual long __cdecl CMultitaskingViewElementBase::Select(void) __ptr64
-    Method 45: public: virtual long __cdecl CVirtualDesktopContainerElement::GetAccessibleName(unsigned short * __ptr64 * __ptr64) __ptr64
-    Method 46: public: virtual long __cdecl CMultitaskingViewElementBase::GetAutomationId(unsigned short * __ptr64 * __ptr64) __ptr64
-    Method 47: public: virtual long __cdecl CMultitaskingViewElementBase::GetAccessibleObject(struct _GUID const & __ptr64,void * __ptr64 * __ptr64) __ptr64
-    Method 48: public: virtual class Microsoft::WRL::ComPtr<struct IAnimationCoordinator> __cdecl CMultitaskingViewElementBase::GetAnimationCoordinator(void) __ptr64
-    Method 49: public: virtual void __cdecl CMultitaskingViewElementBase::SetAnimationCoordinator(struct IAnimationCoordinator * __ptr64) __ptr64
-    Method 50: public: virtual enum AnimationCoordinatorItemType __cdecl CMultitaskingViewElementBase::GetItemType(void) __ptr64
-    Method 51: public: virtual bool __cdecl CMultitaskingViewElementBase::IsEmpty(void) __ptr64
-    Method 52: public: virtual void __cdecl CMultitaskingViewElementBase::ChildBecameEmpty(void) __ptr64
-    Method 53: public: virtual class Microsoft::WRL::ComPtr<struct IMultitaskingViewDragProvider> __cdecl CMultitaskingViewElementBase::GetDragProvider(void) __ptr64
-    Method 54: public: virtual void __cdecl CMultitaskingViewElementBase::DragStarted(struct IUnknown * __ptr64) __ptr64
-    Method 55: public: virtual void __cdecl CMultitaskingViewElementBase::DragEnding(struct IUnknown * __ptr64,enum DropEffect) __ptr64
-    Method 56: public: virtual void __cdecl CMultitaskingViewElementBase::DragEnded(struct IUnknown * __ptr64,enum DropEffect) __ptr64
-    Method 57: public: virtual enum DropEffect __cdecl CMultitaskingViewElementBase::DragOver(class DragAndDropArgs * __ptr64,class MultitaskingViewPointerInputArgs const & __ptr64) __ptr64
-    Method 58: public: virtual void __cdecl CMultitaskingViewElementBase::DragLeave(void) __ptr64
-    Method 59: public: virtual enum DropEffect __cdecl CMultitaskingViewElementBase::Drop(class DragAndDropArgs * __ptr64,class MultitaskingViewPointerInputArgs const & __ptr64) __ptr64
-    Method 60: public: virtual void __cdecl CMultitaskingViewElementBase::ThumbnailSizeChanged(void * __ptr64) __ptr64
-    Method 61: public: virtual long __cdecl CMultitaskingViewElementBase::AttachThumbnail(struct IDCompThumbnail * __ptr64) __ptr64
-    Method 62: public: virtual long __cdecl CMultitaskingViewElementBase::Start2DAnimation(enum DCompThumbnailAnimation,struct IUIAnimationStoryboardEventHandler2 * __ptr64) __ptr64
-    Method 63: public: virtual long __cdecl CMultitaskingViewElementBase::SetOpacity(double,enum DCompThumbnailAnimation,struct IUIAnimationStoryboardEventHandler2 * __ptr64) __ptr64
-    Method 64: public: virtual void __cdecl CMultitaskingViewElementBase::SetPosition(struct Geometry::CRect const & __ptr64,enum DCompThumbnailAnimation,struct IUIAnimationStoryboardEventHandler2 * __ptr64) __ptr64
-    Method 65: protected: virtual void __cdecl CMultitaskingViewElementBase::v_LayoutChildren(enum DCompThumbnailAnimation,struct IUIAnimationStoryboardEventHandler2 * __ptr64) __ptr64
-    Method 66: protected: virtual void __cdecl CVirtualDesktopContainerElement::v_LayoutChildren(void) __ptr64
-    Method 67: protected: virtual class Microsoft::WRL::ComPtr<struct IMultitaskingViewElement> __cdecl CVirtualDesktopBarElement::v_NavigateFromChildIndex(unsigned __int64,unsigned int,enum NavigationType) __ptr64
-    Method 68: protected: virtual bool __cdecl CVirtualDesktopContainerElement::v_PreHover(class MultitaskingViewPointerInputArgs const & __ptr64) __ptr64
-    Method 69: protected: virtual bool __cdecl CMultitaskingViewElementBase::v_OnClick(enum PointerButton,class MultitaskingViewPointerInputArgs const & __ptr64) __ptr64
-    Method 70: protected: virtual void __cdecl CVirtualDesktopContainerElement::v_OnPointerMove(class MultitaskingViewPointerInputArgs const & __ptr64) __ptr64
-    Method 71: protected: virtual void __cdecl CVirtualDesktopContainerElement::v_OnPointerLeave(void) __ptr64
-    Method 72: protected: virtual long __cdecl CVirtualDesktopContainerElement::v_AddChildToArray(struct IMultitaskingViewElement * __ptr64) __ptr64
-    Method 73: protected: virtual long __cdecl CVirtualDesktopContainerElement::v_InitAccessibleObject(struct WeakReference::IWeakReference * __ptr64,struct _GUID const & __ptr64,void * __ptr64 * __ptr64) __ptr64
-    Method 74: protected: virtual bool __cdecl CMultitaskingViewElementBase::v_InvokeElement(void) __ptr64
-    Method 75: protected: virtual void __cdecl CMultitaskingViewElementBase::v_ContextMenu(class ContextMenuArgs const & __ptr64) __ptr64
-    Method 76: protected: virtual bool __cdecl CVirtualDesktopBarElement::v_IsContainer(void) __ptr64
-    Method 77: protected: virtual enum DropEffect __cdecl CVirtualDesktopContainerElement::v_OnDragOver(class DragAndDropArgs * __ptr64,class MultitaskingViewPointerInputArgs const & __ptr64) __ptr64
-    Method 78: protected: virtual void __cdecl CMultitaskingViewElementBase::v_OnDragLeave(void) __ptr64
-    Method 79: protected: virtual enum DropEffect __cdecl CMultitaskingViewElementBase::v_OnDrop(class DragAndDropArgs * __ptr64,class MultitaskingViewPointerInputArgs const & __ptr64) __ptr64
-    Method 80: protected: virtual void __cdecl CMultitaskingViewElementBase::v_StartDrag(struct Geometry::CPoint const & __ptr64) __ptr64
-    Method 81: public: virtual void * __ptr64 __cdecl CVirtualDesktopContainerElement::`vector deleting destructor'(unsigned int) __ptr64
-
-
-Dumping vftable: const CVirtualDesktopContainerElement::`vftable'{for `IVirtualDesktopContainerElement'}
-    Method  0: QueryInterface
-    Method  1: AddRef
-    Method  2: Release
-    Method  3: public: virtual void __cdecl CVirtualDesktopContainerElement::FrameRectChanged(struct tagRECT const & __ptr64) __ptr64
-    Method  4: public: virtual struct Geometry::CSize __cdecl CVirtualDesktopContainerElement::GetVirtualDesktopThumbnailSize(void) __ptr64
-    Method  5: public: virtual class ObservableProperty<bool> & __ptr64 __cdecl CVirtualDesktopContainerElement::GetSingleDesktopMode(void) __ptr64
-    Method  6: public: virtual void __cdecl CVirtualDesktopContainerElement::ScrollIntoView(struct IMultitaskingViewElement * __ptr64) __ptr64
-    Method  7: public: virtual void __cdecl CVirtualDesktopContainerElement::ScrollCurrentDesktopIntoView(void) __ptr64
-
-
-Dumping vftable: const CVirtualDesktopDefaultForegroundHandler::`vftable'
-    Method  0: QueryInterface
-    Method  1: AddRef
-    Method  2: Release
-    Method  3: public: virtual long __cdecl CVirtualDesktopDefaultForegroundHandler::SetDefaultForeground(void) __ptr64
-    Method  4: public: virtual bool __cdecl CVirtualDesktopDefaultForegroundHandler::IsCurrentForegroundDefault(void) __ptr64
-    Method  5: public: virtual void * __ptr64 __cdecl Microsoft::WRL::RuntimeClass<struct Microsoft::WRL::RuntimeClassFlags<2>,struct Windows::Foundation::ITypedEventHandler<struct Windows::Internal::Shell::ViewManagerInterop::IViewWrapper * __ptr64,struct Windows::Internal::Shell::ViewManagerInterop::IViewEventArgs * __ptr64> >::`vector deleting destructor'(unsigned int) __ptr64
-
-
-Dumping vftable: const CVirtualDesktopFactory::`vftable'
-    Method  0: QueryInterface
-    Method  1: AddRef
-    Method  2: Release
-    Method  3: public: virtual long __cdecl CVirtualDesktopFactory::CreateVirtualDesktop(struct _GUID const & __ptr64,struct _GUID const & __ptr64,void * __ptr64 * __ptr64) __ptr64
-    Method  4: public: virtual long __cdecl CVirtualDesktopFactory::CreateVirtualDesktop(struct _GUID const & __ptr64,void * __ptr64 * __ptr64) __ptr64
-    Method  5: public: virtual void * __ptr64 __cdecl CGridTelemetryController::`scalar deleting destructor'(unsigned int) __ptr64
-    Method  6: QueryInterface
-    Method  7: AddRef
-    Method  8: Release
-    Method  9: Unknown (0x1A2240)
-    Method 10: Unknown (0x199A90)
-    Method 11: QueryInterface
-    Method 12: AddRef
-    Method 13: Release
-    Method 14: Unknown (0x1A2720)
-    Method 15: Unknown (0x199A40)
-    Method 16: QueryInterface
-    Method 17: AddRef
-    Method 18: Release
-    Method 19: Unknown (0x1A26C0)
-    Method 20: Unknown (0x199A40)
-    Method 21: QueryInterface
-    Method 22: AddRef
-    Method 23: Release
-    Method 24: Unknown (0x704E0)
-    Method 25: Unknown (0x60BE0)
-    Method 26: QueryInterface
-    Method 27: AddRef
-    Method 28: Release
-    Method 29: Unknown (0x3BE70)
-    Method 30: Unknown (0x60BE0)
-
-
-Dumping vftable: const CVirtualDesktopForegroundPolicy::`vftable'
-    Method  0: QueryInterface
-    Method  1: AddRef
-    Method  2: Release
-    Method  3: public: virtual long __cdecl CVirtualDesktopForegroundPolicy::DesktopChanged(struct IVirtualDesktop * __ptr64) __ptr64
-    Method  4: public: virtual long __cdecl CVirtualDesktopForegroundPolicy::ForegroundViewChanged(struct IVirtualDesktopManagerPrivate * __ptr64,struct IVirtualDesktopSwitchAnimator * __ptr64,struct IApplicationView * __ptr64) __ptr64
-    Method  5: public: virtual long __cdecl CVirtualDesktopForegroundPolicy::GetNewForegroundViewForDesktopSwitch(struct IVirtualDesktop * __ptr64,struct IApplicationView * __ptr64 * __ptr64,bool * __ptr64) __ptr64
-    Method  6: public: virtual long __cdecl CVirtualDesktopForegroundPolicy::SetViewInterfaces(struct IApplicationViewCollection * __ptr64) __ptr64
-    Method  7: public: virtual void * __ptr64 __cdecl CVirtualDesktopForegroundPolicy::`vector deleting destructor'(unsigned int) __ptr64
-
-
-Dumping vftable: const CVirtualDesktopHolographicViewTransitionNotification::`vftable'{for `Microsoft::WRL::Details::ImplementsHelper<struct Microsoft::WRL::RuntimeClassFlags<2>,1,struct Microsoft::WRL::Details::ImplementsMarker<class Microsoft::WRL::FtmBase> >'}
-    Method  0: QueryInterface
-    Method  1: AddRef
-    Method  2: Release
-    Method  3: public: virtual long __cdecl Microsoft::WRL::FtmBase::GetUnmarshalClass(struct _GUID const & __ptr64,void * __ptr64,unsigned long,void * __ptr64,unsigned long,struct _GUID * __ptr64) __ptr64
-    Method  4: public: virtual long __cdecl Microsoft::WRL::FtmBase::GetMarshalSizeMax(struct _GUID const & __ptr64,void * __ptr64,unsigned long,void * __ptr64,unsigned long,unsigned long * __ptr64) __ptr64
-    Method  5: public: virtual long __cdecl Microsoft::WRL::FtmBase::MarshalInterface(struct IStream * __ptr64,struct _GUID const & __ptr64,void * __ptr64,unsigned long,void * __ptr64,unsigned long) __ptr64
-    Method  6: public: virtual long __cdecl Microsoft::WRL::FtmBase::UnmarshalInterface(struct IStream * __ptr64,struct _GUID const & __ptr64,void * __ptr64 * __ptr64) __ptr64
-    Method  7: Release
-    Method  8: public: virtual long __cdecl Microsoft::WRL::FtmBase::DisconnectObject(unsigned long) __ptr64
-    Method  9: QueryInterface
-    Method 10: AddRef
-    Method 11: Release
-    Method 12: Unknown (0x68530)
-    Method 13: Unknown (0x73D60)
-
-
-Dumping vftable: const CVirtualDesktopHolographicViewTransitionNotification::`vftable'{for `IHolographicViewTransitionNotification'}
-    Method  0: QueryInterface
-    Method  1: AddRef
-    Method  2: Release
-    Method  3: public: virtual long __cdecl CVirtualDesktopHolographicViewTransitionNotification::ViewTransitionedToHolographic(struct IApplicationView * __ptr64) __ptr64
-    Method  4: public: virtual long __cdecl CVirtualDesktopHolographicViewTransitionNotification::ViewTransitionedFromHolographic(struct IApplicationView * __ptr64) __ptr64
-    Method  5: public: virtual void * __ptr64 __cdecl CVirtualDesktopHolographicViewTransitionNotification::`scalar deleting destructor'(unsigned int) __ptr64
-
-
-Dumping vftable: const CVirtualDesktopHotkeyHandler::`vftable'{for `Microsoft::WRL::ChainInterfaces<struct IVirtualDesktopHotkeyHandlerPrivate,struct IVirtualDesktopHotkeyHandler,class Microsoft::WRL::Details::Nil,class Microsoft::WRL::Details::Nil,class Microsoft::WRL::Details::Nil,class Microsoft::WRL::Details::Nil,class Microsoft::WRL::Details::Nil,class Microsoft::WRL::Details::Nil,class Microsoft::WRL::Details::Nil,class Microsoft::WRL::Details::Nil>'}
-    Method  0: QueryInterface
-    Method  1: AddRef
-    Method  2: Release
-    Method  3: public: virtual long __cdecl CVirtualDesktopHotkeyHandler::HandleHotkey(enum IMMERSIVE_HOT_KEY_ID) __ptr64
-    Method  4: public: virtual long __cdecl CVirtualDesktopHotkeyHandler::DelayInitialize(struct IVirtualDesktopSwitchAnimator * __ptr64,class wil::com_ptr_t<struct Windows::Internal::Shell::IRemoteSessionWindowManager,struct wil::err_exception_policy> const & __ptr64) __ptr64
-    Method  5: public: virtual long __cdecl CVirtualDesktopHotkeyHandler::DelayInitialize(struct IVirtualDesktopSwitchAnimator * __ptr64) __ptr64
-    Method  6: public: virtual void * __ptr64 __cdecl CVirtualDesktopHotkeyHandler::`vector deleting destructor'(unsigned int) __ptr64
-    Method  7: QueryInterface
-    Method  8: AddRef
-    Method  9: Release
-    Method 10: Unknown (0x1F4D60)
-    Method 11: Unknown (0x1F33F0)
-    Method 12: QueryInterface
-    Method 13: AddRef
-    Method 14: Release
-    Method 15: Unknown (0x1F5E40)
-    Method 16: Unknown (0x1F3430)
-
-
-Dumping vftable: const CVirtualDesktopHotkeyHandler::`vftable'{for `Microsoft::WRL::Details::ImplementsHelper<struct Microsoft::WRL::RuntimeClassFlags<2>,1,struct Microsoft::WRL::ChainInterfaces<struct IVirtualDesktopHotkeyHandlerPrivate2,struct IVirtualDesktopHotkeyHandlerPrivate,class Microsoft::WRL::Details::Nil,class Microsoft::WRL::Details::Nil,class Microsoft::WRL::Details::Nil,class Microsoft::WRL::Details::Nil,class Microsoft::WRL::Details::Nil,class Microsoft::WRL::Details::Nil,class Microsoft::WRL::Details::Nil,class Microsoft::WRL::Details::Nil> >'}
-    Method  0: QueryInterface
-    Method  1: AddRef
-    Method  2: Release
-    Method  3: [thunk]:public: virtual long __cdecl CVirtualDesktopHotkeyHandler::HandleHotkey`adjustor{8}' (enum IMMERSIVE_HOT_KEY_ID) __ptr64
-    Method  4: [thunk]:public: virtual long __cdecl CVirtualDesktopHotkeyHandler::DelayInitialize`adjustor{8}' (struct IVirtualDesktopSwitchAnimator * __ptr64,class wil::com_ptr_t<struct Windows::Internal::Shell::IRemoteSessionWindowManager,struct wil::err_exception_policy> const & __ptr64) __ptr64
-    Method  5: [thunk]:public: virtual long __cdecl CVirtualDesktopHotkeyHandler::DelayInitialize`adjustor{8}' (struct IVirtualDesktopSwitchAnimator * __ptr64) __ptr64
-    Method  6: public: virtual long __cdecl CVirtualDesktopHotkeyHandler::DelayInitialize(struct ISwitchThumbnailDeviceManager * __ptr64,struct IApplicationViewCollection * __ptr64,struct IVirtualDesktopSwitchAnimator * __ptr64,struct IImmersiveSettingsCache * __ptr64,struct IImmersiveMonitorManager * __ptr64,class wil::com_ptr_t<struct Windows::Internal::Shell::IRemoteSessionWindowManager,struct wil::err_exception_policy> const & __ptr64) __ptr64
-    Method  7: public: virtual long __cdecl CVirtualDesktopHotkeyHandler::DelayInitialize(struct ISwitchThumbnailDeviceManager * __ptr64,struct IApplicationViewCollection * __ptr64,struct IVirtualDesktopSwitchAnimator * __ptr64,struct IImmersiveSettingsCache * __ptr64,struct IImmersiveMonitorManager * __ptr64) __ptr64
-
-
-Dumping vftable: const CVirtualDesktopLock::`vftable'
-    Method  0: QueryInterface
-    Method  1: AddRef
-    Method  2: Release
-    Method  3: public: virtual class Microsoft::WRL::Wrappers::Details::SyncLockShared __cdecl CVirtualDesktopLock::AcquireShared(void) __ptr64
-    Method  4: public: virtual class Microsoft::WRL::Wrappers::Details::SyncLockExclusive __cdecl CVirtualDesktopLock::AcquireExclusive(void) __ptr64
-    Method  5: public: virtual void * __ptr64 __cdecl Windows::Internal::ComTaskPool::CTaskWrapper<class <lambda_dff7b450e7eee25fd5a246545de8ddb9> >::`vector deleting destructor'(unsigned int) __ptr64
 
 
 Dumping vftable: const CVirtualDesktopManager::`vftable'{for `Microsoft::WRL::Details::ImplementsHelper<struct Microsoft::WRL::RuntimeClassFlags<3>,1,struct Microsoft::WRL::ChainInterfaces<struct IVirtualDesktopManagerPrivate,struct IVirtualDesktopManagerInternal,struct IVirtualDesktopManagerInternal2,class Microsoft::WRL::Details::Nil,class Microsoft::WRL::Details::Nil,class Microsoft::WRL::Details::Nil,class Microsoft::WRL::Details::Nil,class Microsoft::WRL::Details::Nil,class Microsoft::WRL::Details::Nil,class Microsoft::WRL::Details::Nil>,struct IWeakReferenceSource,struct IVirtualDesktopManagerInternal,struct IVirtualDesktopManagerInternal2,struct ISuspendableVirtualDesktopManager,struct IImmersiveWindowMessageNotification,class Microsoft::WRL::FtmBase>'}
@@ -612,7 +188,7 @@ Dumping vftable: const CVirtualDesktopManager::`vftable'{for `IInspectable'}
     Method  3: GetIids(unsigned long * __ptr64,struct _GUID * __ptr64 * __ptr64) __ptr64
     Method  4: GetRuntimeClassName(struct HSTRING__ * __ptr64 * __ptr64) __ptr64
     Method  5: GetTrustLevel(enum TrustLevel * __ptr64) __ptr64
-    Method  6: public: virtual void * __ptr64 __cdecl CVirtualDesktopManager::`scalar deleting destructor'(unsigned int) __ptr64
+    Method  6: ~Destructor
 
 
 Dumping vftable: const CVirtualDesktopManager::`vftable'{for `IVirtualDesktopManagerInternal2'}
@@ -669,7 +245,7 @@ Dumping vftable: const CVirtualDesktopNotificationsDerived::`vftable'
     Method  4: public: virtual long __cdecl CVirtualDesktopNotifications::Unregister(unsigned long) __ptr64
     Method  5: public: virtual long __cdecl CVirtualDesktopNotifications::RegisterInternal(struct IVirtualDesktopNotification * __ptr64,unsigned long * __ptr64) __ptr64
     Method  6: public: virtual long __cdecl CVirtualDesktopNotifications::UnregisterInternal(unsigned long) __ptr64
-    Method  7: public: virtual void * __ptr64 __cdecl CVirtualDesktopNotificationsDerived::`vector deleting destructor'(unsigned int) __ptr64
+    Method  7: ~Destructor
 
 
 Dumping vftable: const CVirtualDesktopNotificationsDerived::`vftable'{for `IVirtualDesktopNotification'}
@@ -687,62 +263,6 @@ Dumping vftable: const CVirtualDesktopNotificationsDerived::`vftable'{for `IVirt
     Method 11: public: virtual long __cdecl VirtualDesktopNotificationForwarderHelper<class CVirtualDesktopNotifications>::VirtualDesktopWallpaperChanged(struct IVirtualDesktop * __ptr64,struct HSTRING__ * __ptr64) __ptr64
     Method 12: public: virtual long __cdecl VirtualDesktopNotificationForwarderHelper<class CVirtualDesktopNotifications>::VirtualDesktopSwitched(struct IVirtualDesktop * __ptr64) __ptr64
     Method 13: public: virtual long __cdecl VirtualDesktopNotificationForwarderHelper<class CVirtualDesktopNotifications>::RemoteVirtualDesktopConnected(struct IVirtualDesktop * __ptr64) __ptr64
-
-
-Dumping vftable: const CVirtualDesktopSoftLandingHandler::`vftable'{for `Microsoft::WRL::Details::ImplementsHelper<struct Microsoft::WRL::RuntimeClassFlags<2>,1,struct IApplicationViewChangeListener>'}
-    Method  0: QueryInterface
-    Method  1: AddRef
-    Method  2: Release
-    Method  3: public: virtual long __cdecl CVirtualDesktopSoftLandingHandler::OnApplicationViewChanged(struct IApplicationView * __ptr64,enum APPLICATION_VIEW_CHANGE,struct IUnknown * __ptr64) __ptr64
-
-
-Dumping vftable: const CVirtualDesktopSoftLandingHandler::`vftable'
-    Method  0: QueryInterface
-    Method  1: AddRef
-    Method  2: Release
-    Method  3: public: virtual long __cdecl CVirtualDesktopSoftLandingHandler::VirtualDesktopCreated(struct IVirtualDesktop * __ptr64) __ptr64
-    Method  4: public: virtual long __cdecl VirtualDesktopNotificationForwarderHelper<class VirtualDesktopNotificationBaseHelper<struct IVirtualDesktopNotification> >::VirtualDesktopDestroyBegin(struct IVirtualDesktop * __ptr64,struct IVirtualDesktop * __ptr64) __ptr64
-    Method  5: public: virtual long __cdecl VirtualDesktopNotificationForwarderHelper<class VirtualDesktopNotificationBaseHelper<struct IVirtualDesktopNotification> >::VirtualDesktopDestroyFailed(struct IVirtualDesktop * __ptr64,struct IVirtualDesktop * __ptr64) __ptr64
-    Method  6: public: virtual long __cdecl VirtualDesktopNotificationForwarderHelper<class VirtualDesktopNotificationBaseHelper<struct IVirtualDesktopNotification> >::VirtualDesktopDestroyed(struct IVirtualDesktop * __ptr64,struct IVirtualDesktop * __ptr64) __ptr64
-    Method  7: public: virtual long __cdecl VirtualDesktopNotificationForwarderHelper<class VirtualDesktopNotificationBaseHelper<struct IVirtualDesktopNotification> >::VirtualDesktopMoved(struct IVirtualDesktop * __ptr64,unsigned int,unsigned int) __ptr64
-    Method  8: public: virtual long __cdecl VirtualDesktopNotificationForwarderHelper<class VirtualDesktopNotificationBaseHelper<struct IVirtualDesktopNotification> >::VirtualDesktopNameChanged(struct IVirtualDesktop * __ptr64,struct HSTRING__ * __ptr64) __ptr64
-    Method  9: public: virtual long __cdecl VirtualDesktopNotificationForwarderHelper<class VirtualDesktopNotificationBaseHelper<struct IVirtualDesktopNotification> >::ViewVirtualDesktopChanged(struct IApplicationView * __ptr64) __ptr64
-    Method 10: public: virtual long __cdecl CVirtualDesktopSoftLandingHandler::CurrentVirtualDesktopChanged(struct IVirtualDesktop * __ptr64,struct IVirtualDesktop * __ptr64) __ptr64
-    Method 11: public: virtual long __cdecl VirtualDesktopNotificationForwarderHelper<class VirtualDesktopNotificationBaseHelper<struct IVirtualDesktopNotification> >::VirtualDesktopWallpaperChanged(struct IVirtualDesktop * __ptr64,struct HSTRING__ * __ptr64) __ptr64
-    Method 12: public: virtual long __cdecl VirtualDesktopNotificationForwarderHelper<class VirtualDesktopNotificationBaseHelper<struct IVirtualDesktopNotification> >::VirtualDesktopSwitched(struct IVirtualDesktop * __ptr64) __ptr64
-    Method 13: public: virtual long __cdecl VirtualDesktopNotificationForwarderHelper<class VirtualDesktopNotificationBaseHelper<struct IVirtualDesktopNotification> >::RemoteVirtualDesktopConnected(struct IVirtualDesktop * __ptr64) __ptr64
-    Method 14: public: virtual void * __ptr64 __cdecl CVirtualDesktopSoftLandingHandler::`vector deleting destructor'(unsigned int) __ptr64
-
-
-Dumping vftable: const CVirtualDesktopSoftLandingHandler::`vftable'{for `IVirtualDesktopSoftLandingHandler'}
-    Method  0: QueryInterface
-    Method  1: AddRef
-    Method  2: Release
-    Method  3: public: virtual long __cdecl CVirtualDesktopSoftLandingHandler::Shutdown(void) __ptr64
-
-
-Dumping vftable: const CVirtualDesktopSwitcherService::`vftable'{for `Microsoft::WRL::Details::ImplementsHelper<struct Microsoft::WRL::RuntimeClassFlags<2>,1,struct IVirtualDesktopSwitcherInvoker>'}
-    Method  0: QueryInterface
-    Method  1: AddRef
-    Method  2: Release
-    Method  3: public: virtual long __cdecl CVirtualDesktopSwitcherService::ShowVirtualDesktopSwitcher(struct HMONITOR__ * __ptr64,enum VIRTUAL_DESKTOP_SWITCHER_INVOKE_DETAILS) __ptr64
-    Method  4: public: virtual long __cdecl CVirtualDesktopSwitcherService::DismissVirtualDesktopSwitcher(void) __ptr64
-
-
-Dumping vftable: const CVirtualDesktopSwitcherService::`vftable'
-    Method  0: QueryInterface
-    Method  1: AddRef
-    Method  2: Release
-    Method  3: public: virtual long __cdecl CWRLObjectWithSite::SetSite(struct IUnknown * __ptr64) __ptr64
-    Method  4: public: virtual long __cdecl CWRLObjectWithSite::GetSite(struct _GUID const & __ptr64,void * __ptr64 * __ptr64) __ptr64
-    Method  5: public: virtual void * __ptr64 __cdecl CVirtualDesktopSwitcherService::`vector deleting destructor'(unsigned int) __ptr64
-
-
-Dumping vftable: const CVirtualDesktopSwitcherService::`vftable'{for `IVirtualDesktopSwitcherService'}
-    Method  0: QueryInterface
-    Method  1: AddRef
-    Method  2: Release
-    Method  3: public: virtual void __cdecl CVirtualDesktopSwitcherService::SetMonitorManager(struct IImmersiveMonitorManager * __ptr64) __ptr64
 
 
 Dumping vftable: const CVirtualDesktopVisibilityPolicy::`vftable'
@@ -764,7 +284,19 @@ Dumping vftable: const CVirtualDesktopVisibilityPolicy::`vftable'
     Method 15: public: virtual bool __cdecl CVirtualDesktopVisibilityPolicy::IsViewPinned(struct IApplicationView * __ptr64,bool * __ptr64) __ptr64
     Method 16: public: virtual long __cdecl CVirtualDesktopVisibilityPolicy::UnpinView(struct IApplicationView * __ptr64,struct IVirtualDesktop * __ptr64) __ptr64
     Method 17: public: virtual long __cdecl CVirtualDesktopVisibilityPolicy::MoveViewToHolographicDesktop(struct IApplicationView * __ptr64) __ptr64
-    Method 18: public: virtual void * __ptr64 __cdecl CVirtualDesktopVisibilityPolicy::`scalar deleting destructor'(unsigned int) __ptr64
+    Method 18: ~Destructor
+
+
+Dumping vftable: const VirtualDesktopsApi::`vftable'{for `Microsoft::WRL::Details::ImplementsHelper<struct Microsoft::WRL::RuntimeClassFlags<2>,1,struct Microsoft::WRL::Details::ImplementsMarker<class Microsoft::WRL::FtmBase> >'}
+    Method  0: QueryInterface
+    Method  1: AddRef
+    Method  2: Release
+    Method  3: public: virtual long __cdecl Microsoft::WRL::FtmBase::GetUnmarshalClass(struct _GUID const & __ptr64,void * __ptr64,unsigned long,void * __ptr64,unsigned long,struct _GUID * __ptr64) __ptr64
+    Method  4: public: virtual long __cdecl Microsoft::WRL::FtmBase::GetMarshalSizeMax(struct _GUID const & __ptr64,void * __ptr64,unsigned long,void * __ptr64,unsigned long,unsigned long * __ptr64) __ptr64
+    Method  5: public: virtual long __cdecl Microsoft::WRL::FtmBase::MarshalInterface(struct IStream * __ptr64,struct _GUID const & __ptr64,void * __ptr64,unsigned long,void * __ptr64,unsigned long) __ptr64
+    Method  6: public: virtual long __cdecl Microsoft::WRL::FtmBase::UnmarshalInterface(struct IStream * __ptr64,struct _GUID const & __ptr64,void * __ptr64 * __ptr64) __ptr64
+    Method  7: Release
+    Method  8: public: virtual long __cdecl Microsoft::WRL::FtmBase::DisconnectObject(unsigned long) __ptr64
 
 
 Dumping vftable: const VirtualDesktopsApi::`vftable'
@@ -774,4 +306,11 @@ Dumping vftable: const VirtualDesktopsApi::`vftable'
     Method  3: public: virtual long __cdecl VirtualDesktopsApi::IsWindowOnCurrentVirtualDesktop(struct HWND__ * __ptr64,int * __ptr64) __ptr64
     Method  4: public: virtual long __cdecl VirtualDesktopsApi::GetWindowDesktopId(struct HWND__ * __ptr64,struct _GUID * __ptr64) __ptr64
     Method  5: public: virtual long __cdecl VirtualDesktopsApi::MoveWindowToDesktop(struct HWND__ * __ptr64,struct _GUID const & __ptr64) __ptr64
-    Method  6: public: virtual void * __ptr64 __cdecl VirtualDesktopsApi::`vector deleting destructor'(unsigned int) __ptr64
+    Method  6: ~Destructor
+
+
+Dumping vftable: const VirtualDesktopsApi::`vftable'{for `IVirtualDesktopsApiInternal'}
+    Method  0: QueryInterface
+    Method  1: AddRef
+    Method  2: Release
+    Method  3: public: virtual long __cdecl VirtualDesktopsApi::SetViewInterfaces(struct IApplicationViewCollection * __ptr64) __ptr64
