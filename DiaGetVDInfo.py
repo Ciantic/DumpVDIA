@@ -3,19 +3,20 @@
 
 # In[1]:
 
-
+import sys
 import comtypes
 import comtypes.client
 
 # this has to be before the import that follows
-msdia = comtypes.client.GetModule(r'C:\Program Files (x86)\Common Files\Microsoft Shared\VC\amd64\msdia80.dll')
+# msdia = comtypes.client.GetModule(r'C:\Program Files (x86)\Common Files\Microsoft Shared\VC\amd64\msdia80.dll')
+msdia = comtypes.client.GetModule(r'msdia80.dll')
 
 from comtypes.gen.Dia2Lib import *
 
 try:
     dia = comtypes.client.CreateObject(msdia.DiaSource)
 except Exception as exc:
-    print("Exception creating DIA object: %s\nTry to regsrv32.dll msdia90.dll" % (str(exc)))
+    print("Exception creating DIA object: %s\nAs admin run regsvr32.exe msdia80.dll" % (str(exc)))
     sys.exit(1)
 
 
@@ -38,7 +39,7 @@ class PEFile(pefile.PE):
         self.pdbObj = None
         self.symbols = None
 
-    def downloadPDB(self, localCache=r'E:\Symbols'):
+    def downloadPDB(self, localCache=r'Z:\Symbols'):
         def getPDBURL(pe):
             #pe.parse_data_directories()
             string_version_info = {}
