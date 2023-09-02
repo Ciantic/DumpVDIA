@@ -228,11 +228,11 @@ def dumpVFT(vftName):
     symMap2 = {c.rva: c for c in vftSym.pe.symbols}
     for i, ptr in enumerate(vftPtrs):
         if ptr in symMap2:
-            if "::Release`" in symMap2[ptr].undName:
+            if "::Release" in symMap2[ptr].undName:
                 print("    Method %2d: Release" % i)
-            elif "::AddRef`" in symMap2[ptr].undName:
+            elif "::AddRef" in symMap2[ptr].undName:
                 print("    Method %2d: AddRef" % i)
-            elif "::QueryInterface`" in symMap2[ptr].undName:
+            elif "::QueryInterface" in symMap2[ptr].undName:
                 print("    Method %2d: QueryInterface" % i)
             else:
                 print("    Method %2d: %s (%s)" % (i, symMap2[ptr].undName, symMap2[ptr].name))
