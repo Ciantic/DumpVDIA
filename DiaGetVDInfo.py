@@ -222,7 +222,8 @@ for k in iid_ordered:
 # dump vft
 def dumpVFT(vftName):
     vftSym = symMap[vftName]
-    print("\n\nDumping vftable: %s" % vftSym.undName)
+    clsName = vftSym.undName # vftSym.undName.split('::')[0]
+    print("\n\nDumping vftable: %s" % clsName)
     vftData = vftSym.readData()
     vftPtrs = [int.from_bytes(vftData[c:c+8], 'little') - vftSym.pe.OPTIONAL_HEADER.ImageBase for c in range(0, len(vftData), 8)]
     symMap2 = {c.rva: c for c in vftSym.pe.symbols}
@@ -235,8 +236,8 @@ def dumpVFT(vftName):
             elif "::QueryInterface" in symMap2[ptr].undName:
                 print("    Method %2d: QueryInterface" % i)
             else:
-                print("    Method %2d: %s (%s)" % (i, symMap2[ptr].undName, symMap2[ptr].name))
-            # print("    Method %2d: %s" % (i, symMap2[ptr].undName))
+                # print("    Method %2d: %s (%s)" % (i, symMap2[ptr].undName, symMap2[ptr].name))
+                print("    Method %2d: %s" % (i, symMap2[ptr].undName))
         else:
             print("    Method %2d: Unknown (0x%X)" % (i, ptr))
 
