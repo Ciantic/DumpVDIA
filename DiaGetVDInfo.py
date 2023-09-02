@@ -217,7 +217,12 @@ iid_ordered.sort()
 for k in iid_ordered:
     printGuidSym(k)
 
-
+def cleanMethodName(methodDef):
+    if "RuntimeClassImpl" in methodDef:
+        methodName = methodDef.split('Microsoft::WRL::Details::RuntimeClassImpl<')[1].split('>::')[1]
+        return methodName
+    else:
+        return methodDef
 
 # dump vft
 def dumpVFT(vftName):
@@ -237,7 +242,8 @@ def dumpVFT(vftName):
                 print("    Method %2d: QueryInterface" % i)
             else:
                 # print("    Method %2d: %s (%s)" % (i, symMap2[ptr].undName, symMap2[ptr].name))
-                print("    Method %2d: %s" % (i, symMap2[ptr].undName))
+                # print("    Method %2d: %s" % (i, symMap2[ptr].undName))
+                print("    Method %2d: %s" % (i, cleanMethodName(symMap2[ptr].undName)))
         else:
             print("    Method %2d: Unknown (0x%X)" % (i, ptr))
 
