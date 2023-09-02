@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
 
 import sys
 import comtypes
@@ -20,7 +19,6 @@ except Exception as exc:
     sys.exit(1)
 
 
-# In[2]:
 
 
 import pefile
@@ -96,7 +94,6 @@ actxprxy = PEFile(r"C:\Windows\System32\actxprxy.dll")
 actxprxy.loadPDB()
 
 
-# In[3]:
 
 
 udtEnumToStr = ('struct', 'class', 'union', 'interface')
@@ -145,7 +142,6 @@ class PDBSymbol:
 # EOF
 
 
-# In[4]:
 
 
 # symb = twinuipcshell.pdbObj.globalScope.findChildren(SymTagPublicSymbol, None, 0)[100]
@@ -154,7 +150,6 @@ class PDBSymbol:
 # hex(twinuipcshell.get_dword_at_rva(symbol_data.virtualAddress))
 
 
-# In[5]:
 
 
 # parse the input PDB
@@ -189,13 +184,10 @@ twinuipcshell.symbols = parsePDB(twinuipcshell)
 actxprxy.symbols = parsePDB(actxprxy)
 
 
-# In[6]:
 
 
 symMap = {c.name: c for c in twinuipcshell.symbols + actxprxy.symbols}
 
-
-# In[7]:
 
 
 # dump guid
@@ -215,12 +207,16 @@ def printGuidSym(symName):
 # printGuidSym("IID_IVirtualDesktopManager")
 # printGuidSym("IID_IVirtualDesktopPinnedApps")
 
+iid_ordered = []
+
 for (k, _) in symMap.items():
     if "IID_IVirtualDesktop" in k:
-        printGuidSym(k)
+        iid_ordered.append(k)
 
+iid_ordered.sort()
+for k in iid_ordered:
+    printGuidSym(k)
 
-# In[8]:
 
 
 # dump vft
@@ -233,20 +229,24 @@ def dumpVFT(vftName):
     for i, ptr in enumerate(vftPtrs):
         if ptr in symMap2:
             print("    Method %2d: %s (%s)" % (i, symMap2[ptr].undName, symMap2[ptr].name))
+            # print("    Method %2d: %s" % (i, symMap2[ptr].undName))
         else:
             print("    Method %2d: Unknown (0x%X)" % (i, ptr))
 
 #symMap['??_7CVirtualDesktopManager@@6BIVirtualDesktopManagerInternal@@@'].pe
 
+vft_ordered = []
+
 for (k, _) in symMap.items():
     if "??_7CVirtualDesktop" in k:
-        dumpVFT(k)
+        vft_ordered.append(k)
+vft_ordered.append('??_7VirtualDesktopsApi@@6B@')
+vft_ordered.sort()
 
-# dumpVFT('??_7CVirtualDesktopManager@@6BIVirtualDesktopManagerInternal@@@')
-dumpVFT('??_7VirtualDesktopsApi@@6B@')
 
+for k in vft_ordered:
+    dumpVFT(k)
 
-# In[ ]:
 
 
 
