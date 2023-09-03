@@ -1,2 +1,7 @@
 *.pdb
 msdia80.dll
+*.dll*
+
+# Added by cargo
+
+/target

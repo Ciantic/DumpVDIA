@@ -265,28 +265,6 @@ Dumping vftable: const CVirtualDesktopNotificationsDerived::`vftable'{for `IVirt
     Method 13: public: virtual long __cdecl VirtualDesktopNotificationForwarderHelper<class CVirtualDesktopNotifications>::RemoteVirtualDesktopConnected(struct IVirtualDesktop * __ptr64) __ptr64
 
 
-Dumping vftable: const CVirtualDesktopVisibilityPolicy::`vftable'
-    Method  0: QueryInterface
-    Method  1: AddRef
-    Method  2: Release
-    Method  3: public: virtual bool __cdecl CVirtualDesktopVisibilityPolicy::IsVisible(struct IApplicationView * __ptr64,struct IVirtualDesktop * __ptr64) __ptr64
-    Method  4: public: virtual bool __cdecl CVirtualDesktopVisibilityPolicy::IsVisibleOnlyOnDesktop(struct IApplicationView * __ptr64,struct IVirtualDesktop * __ptr64) __ptr64
-    Method  5: public: virtual long __cdecl CVirtualDesktopVisibilityPolicy::MoveViewToDesktop(struct IApplicationView * __ptr64,struct IVirtualDesktop * __ptr64) __ptr64
-    Method  6: public: virtual bool __cdecl CVirtualDesktopVisibilityPolicy::CanViewMoveDesktops(struct IApplicationView * __ptr64) __ptr64
-    Method  7: public: virtual long __cdecl CVirtualDesktopVisibilityPolicy::OnViewAdded(struct IApplicationView * __ptr64,struct IVirtualDesktop * __ptr64,struct IVirtualDesktopCollection * __ptr64) __ptr64
-    Method  8: public: virtual long __cdecl CVirtualDesktopVisibilityPolicy::OnViewRemoved(struct IApplicationView * __ptr64) __ptr64
-    Method  9: public: virtual bool __cdecl CVirtualDesktopVisibilityPolicy::IsOrphanedView(struct IApplicationView * __ptr64,struct IVirtualDesktopCollection * __ptr64) __ptr64
-    Method 10: public: virtual long __cdecl CVirtualDesktopVisibilityPolicy::GetAssignedDesktop(struct IApplicationView * __ptr64,struct IVirtualDesktopCollection * __ptr64,struct IVirtualDesktop * __ptr64 * __ptr64) __ptr64
-    Method 11: public: virtual bool __cdecl CVirtualDesktopVisibilityPolicy::AreVisibilityPoliciesEqual(struct IApplicationView * __ptr64,struct IApplicationView * __ptr64) __ptr64
-    Method 12: public: virtual long __cdecl CVirtualDesktopVisibilityPolicy::CopyVisibilityPolicy(struct IApplicationView * __ptr64,struct IApplicationView * __ptr64) __ptr64
-    Method 13: public: virtual long __cdecl CVirtualDesktopVisibilityPolicy::SetCurrentDesktopForHighZBandView(struct IApplicationView * __ptr64,struct IVirtualDesktop * __ptr64) __ptr64
-    Method 14: public: virtual long __cdecl CVirtualDesktopVisibilityPolicy::PinViewToAllDesktops(struct IApplicationView * __ptr64,bool) __ptr64
-    Method 15: public: virtual bool __cdecl CVirtualDesktopVisibilityPolicy::IsViewPinned(struct IApplicationView * __ptr64,bool * __ptr64) __ptr64
-    Method 16: public: virtual long __cdecl CVirtualDesktopVisibilityPolicy::UnpinView(struct IApplicationView * __ptr64,struct IVirtualDesktop * __ptr64) __ptr64
-    Method 17: public: virtual long __cdecl CVirtualDesktopVisibilityPolicy::MoveViewToHolographicDesktop(struct IApplicationView * __ptr64) __ptr64
-    Method 18: ~Destructor
-
-
 Dumping vftable: const VirtualDesktopsApi::`vftable'{for `Microsoft::WRL::Details::ImplementsHelper<struct Microsoft::WRL::RuntimeClassFlags<2>,1,struct Microsoft::WRL::Details::ImplementsMarker<class Microsoft::WRL::FtmBase> >'}
     Method  0: QueryInterface
     Method  1: AddRef
@@ -314,3 +292,46 @@ Dumping vftable: const VirtualDesktopsApi::`vftable'{for `IVirtualDesktopsApiInt
     Method  1: AddRef
     Method  2: Release
     Method  3: public: virtual long __cdecl VirtualDesktopsApi::SetViewInterfaces(struct IApplicationViewCollection * __ptr64) __ptr64
+
+
+Dumping vftable: const VirtualPinnedAppsHandler::`vftable'{for `Microsoft::WRL::ChainInterfaces<struct IVirtualDesktopPinnedAppsPrivate,struct IVirtualDesktopPinnedApps,class Microsoft::WRL::Details::Nil,class Microsoft::WRL::Details::Nil,class Microsoft::WRL::Details::Nil,class Microsoft::WRL::Details::Nil,class Microsoft::WRL::Details::Nil,class Microsoft::WRL::Details::Nil,class Microsoft::WRL::Details::Nil,class Microsoft::WRL::Details::Nil>'}
+    Method  0: QueryInterface
+    Method  1: AddRef
+    Method  2: Release
+    Method  3: public: virtual long __cdecl VirtualPinnedAppsHandler::IsAppIdPinned(unsigned short const * __ptr64,int * __ptr64) __ptr64
+    Method  4: public: virtual long __cdecl VirtualPinnedAppsHandler::PinAppID(unsigned short const * __ptr64) __ptr64
+    Method  5: public: virtual long __cdecl VirtualPinnedAppsHandler::UnpinAppID(unsigned short const * __ptr64) __ptr64
+    Method  6: public: virtual long __cdecl VirtualPinnedAppsHandler::IsViewPinned(struct IApplicationView * __ptr64,int * __ptr64) __ptr64
+    Method  7: public: virtual long __cdecl VirtualPinnedAppsHandler::PinView(struct IApplicationView * __ptr64) __ptr64
+    Method  8: public: virtual long __cdecl VirtualPinnedAppsHandler::UnpinView(struct IApplicationView * __ptr64) __ptr64
+    Method  9: public: virtual long __cdecl VirtualPinnedAppsHandler::SetViewCollectionInternal(struct IApplicationViewCollection * __ptr64) __ptr64
+    Method 10: public: virtual long __cdecl VirtualPinnedAppsHandler::ViewAddedInternal(struct IApplicationView * __ptr64) __ptr64
+    Method 11: public: virtual long __cdecl VirtualPinnedAppsHandler::ViewAppIdChangedInternal(struct IApplicationView * __ptr64) __ptr64
+    Method 12: public: virtual long __cdecl VirtualPinnedAppsHandler::PinViewInternal(struct IApplicationView * __ptr64) __ptr64
+    Method 13: public: virtual long __cdecl VirtualPinnedAppsHandler::UnpinViewInternal(struct IApplicationView * __ptr64,struct IVirtualDesktop * __ptr64) __ptr64
+    Method 14: public: virtual long __cdecl VirtualPinnedAppsHandler::PinViewNoGroupPropagateInternal(struct IApplicationView * __ptr64) __ptr64
+    Method 15: public: virtual long __cdecl VirtualPinnedAppsHandler::UnpinViewNoGroupPropagateInternal(struct IApplicationView * __ptr64,struct IVirtualDesktop * __ptr64) __ptr64
+    Method 16: public: virtual int __cdecl VirtualPinnedAppsHandler::IsViewPinnedInternal(struct IApplicationView * __ptr64) __ptr64
+    Method 17: ~Destructor
+    Method 18: Unknown (0x4B5EB0)
+    Method 19: Unknown (0x4B6180)
+    Method 20: Unknown (0x15B6B0)
+    Method 21: Unknown (0x19A290)
+    Method 22: Unknown (0x4B5E40)
+    Method 23: QueryInterface
+    Method 24: AddRef
+    Method 25: Release
+    Method 26: Unknown (0x197B10)
+    Method 27: Unknown (0x183320)
+
+
+Dumping vftable: const VirtualPinnedAppsHandler::`vftable'{for `Microsoft::WRL::Details::ImplementsHelper<struct Microsoft::WRL::RuntimeClassFlags<2>,1,struct Microsoft::WRL::Details::ImplementsMarker<class Microsoft::WRL::FtmBase> >'}
+    Method  0: QueryInterface
+    Method  1: AddRef
+    Method  2: Release
+    Method  3: public: virtual long __cdecl Microsoft::WRL::FtmBase::GetUnmarshalClass(struct _GUID const & __ptr64,void * __ptr64,unsigned long,void * __ptr64,unsigned long,struct _GUID * __ptr64) __ptr64
+    Method  4: public: virtual long __cdecl Microsoft::WRL::FtmBase::GetMarshalSizeMax(struct _GUID const & __ptr64,void * __ptr64,unsigned long,void * __ptr64,unsigned long,unsigned long * __ptr64) __ptr64
+    Method  5: public: virtual long __cdecl Microsoft::WRL::FtmBase::MarshalInterface(struct IStream * __ptr64,struct _GUID const & __ptr64,void * __ptr64,unsigned long,void * __ptr64,unsigned long) __ptr64
+    Method  6: public: virtual long __cdecl Microsoft::WRL::FtmBase::UnmarshalInterface(struct IStream * __ptr64,struct _GUID const & __ptr64,void * __ptr64 * __ptr64) __ptr64
+    Method  7: Release
+    Method  8: public: virtual long __cdecl Microsoft::WRL::FtmBase::DisconnectObject(unsigned long) __ptr64
