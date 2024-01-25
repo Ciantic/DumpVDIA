@@ -6,8 +6,8 @@ IID_IVirtualDesktopAnimationSyncNotificationService: 0DDAF2D8-C38F-4638-95FC-FB9
 IID_IVirtualDesktopHotkeyHandler: 44B664EC-253C-4F5C-827B-78FB573756AE
 IID_IVirtualDesktopManager: A5CD92FF-29BE-454C-8D04-D82879FB3F1B
 IID_IVirtualDesktopManagerInternal: 4970BA3D-FD4E-4647-BEA3-D89076EF4B9C
-IID_IVirtualDesktopManagerInternal2: A3175F2D-239C-4BD2-8AA0-EEBA8B0B138E
-IID_IVirtualDesktopNotification: B287FA1C-7771-471A-A2DF-9B6B21F0D675
+IID_IVirtualDesktopManagerInternal2: 53F5CA0B-158F-4124-900C-057158060B27
+IID_IVirtualDesktopNotification: B9E5E94D-233E-49AB-AF5C-2B4541C3AADE
 IID_IVirtualDesktopNotificationService: 0CD45E71-D927-4F15-8B0A-8FEF525337BF
 IID_IVirtualDesktopPinnedApps: 4CE81583-1E4C-4632-A621-07A53543148F
 IID_IVirtualDesktopSwitcherHost: 1BE71764-E771-4442-B78F-EDA2C7F067F3
@@ -65,6 +65,11 @@ Dumping vftable: const CVirtualDesktop::`vftable'{for `IVirtualDesktopPrivate'}
     Method  6: public: virtual long __cdecl CVirtualDesktop::GetWallpaperInternal(struct HSTRING__ * __ptr64 * __ptr64) __ptr64
     Method  7: public: virtual long __cdecl CVirtualDesktop::SetIsRemoteInternal(int) __ptr64
     Method  8: public: virtual long __cdecl CVirtualDesktop::GetIsRemoteInternal(int * __ptr64) __ptr64
+    Method  9: QueryInterface
+    Method 10: AddRef
+    Method 11: Release
+    Method 12: Unknown (0x1860F0)
+    Method 13: Unknown (0x60D80)
 
 
 Dumping vftable: const CVirtualDesktopManager::`vftable'{for `Microsoft::WRL::Details::ImplementsHelper<struct Microsoft::WRL::RuntimeClassFlags<3>,1,struct Microsoft::WRL::ChainInterfaces<struct IVirtualDesktopManagerPrivate,struct IVirtualDesktopManagerInternal,struct IVirtualDesktopManagerInternal2,class Microsoft::WRL::Details::Nil,class Microsoft::WRL::Details::Nil,class Microsoft::WRL::Details::Nil,class Microsoft::WRL::Details::Nil,class Microsoft::WRL::Details::Nil,class Microsoft::WRL::Details::Nil,class Microsoft::WRL::Details::Nil>,struct IWeakReferenceSource,struct IVirtualDesktopManagerInternal,struct IVirtualDesktopManagerInternal2,struct ISuspendableVirtualDesktopManager,struct IImmersiveWindowMessageNotification,class Microsoft::WRL::FtmBase>'}
@@ -88,7 +93,7 @@ Dumping vftable: const CVirtualDesktopManager::`vftable'{for `Microsoft::WRL::De
     Method 17: public: virtual long __cdecl CVirtualDesktopManager::UpdateWallpaperPathForAllDesktops(struct HSTRING__ * __ptr64) __ptr64
     Method 18: public: virtual long __cdecl CVirtualDesktopManager::CopyDesktopState(struct IApplicationView * __ptr64,struct IApplicationView * __ptr64) __ptr64
     Method 19: public: virtual long __cdecl CVirtualDesktopManager::CreateRemoteDesktop(struct HSTRING__ * __ptr64,struct IVirtualDesktop * __ptr64 * __ptr64) __ptr64
-    Method 20: public: virtual long __cdecl CVirtualDesktopManager::SwitchRemoteDesktop(struct IVirtualDesktop * __ptr64) __ptr64
+    Method 20: public: virtual long __cdecl CVirtualDesktopManager::SwitchRemoteDesktop(struct IVirtualDesktop * __ptr64,enum VirtualDesktopSwitchType) __ptr64
     Method 21: public: virtual long __cdecl CVirtualDesktopManager::SwitchDesktopWithAnimation(struct IVirtualDesktop * __ptr64) __ptr64
     Method 22: public: virtual long __cdecl CVirtualDesktopManager::GetLastActiveDesktop(struct IVirtualDesktop * __ptr64 * __ptr64) __ptr64
     Method 23: public: virtual long __cdecl CVirtualDesktopManager::WaitForAnimationToComplete(void) __ptr64
@@ -109,23 +114,24 @@ Dumping vftable: const CVirtualDesktopManager::`vftable'{for `Microsoft::WRL::De
     Method 38: public: virtual void __cdecl CVirtualDesktopManager::SetRemoteSessionWindowManager(class wil::com_ptr_t<struct Windows::Internal::Shell::IRemoteSessionWindowManager,struct wil::err_exception_policy> const & __ptr64) __ptr64
     Method 39: public: virtual void __cdecl CVirtualDesktopManager::DelayInitialize(struct ISwitchThumbnailDeviceManager * __ptr64,struct IVirtualDesktopSwitchAnimator * __ptr64,struct IImmersiveSettingsCache * __ptr64,struct IMultitaskingViewServiceProvider * __ptr64) __ptr64
     Method 40: public: virtual void __cdecl CVirtualDesktopManager::DismissTaskViewInRemote(struct IVirtualDesktop * __ptr64) __ptr64
-    Method 41: public: virtual long __cdecl CVirtualDesktopManager::GetCountInternal(unsigned int * __ptr64) __ptr64
-    Method 42: public: virtual long __cdecl CVirtualDesktopManager::MoveViewToDesktopInternal(struct IApplicationView * __ptr64,struct IVirtualDesktop * __ptr64) __ptr64
-    Method 43: public: virtual long __cdecl CVirtualDesktopManager::MoveViewToDesktopFromApiInternal(struct IApplicationView * __ptr64,struct IVirtualDesktop * __ptr64) __ptr64
-    Method 44: public: virtual long __cdecl CVirtualDesktopManager::GetCurrentDesktopInternal(struct IVirtualDesktop * __ptr64 * __ptr64) __ptr64
-    Method 45: public: virtual long __cdecl CVirtualDesktopManager::GetDesktopsInternal(struct IObjectArray * __ptr64 * __ptr64) __ptr64
-    Method 46: public: virtual long __cdecl CVirtualDesktopManager::GetAdjacentDesktopInternal(struct IVirtualDesktop * __ptr64,unsigned int,struct IVirtualDesktop * __ptr64 * __ptr64) __ptr64
-    Method 47: public: virtual long __cdecl CVirtualDesktopManager::SwitchDesktopInternal(struct IVirtualDesktop * __ptr64) __ptr64
-    Method 48: public: virtual long __cdecl CVirtualDesktopManager::CreateDesktopInternal(struct IVirtualDesktop * __ptr64 * __ptr64) __ptr64
-    Method 49: public: virtual long __cdecl CVirtualDesktopManager::RemoveDesktopInternal(struct IVirtualDesktop * __ptr64,struct IVirtualDesktop * __ptr64) __ptr64
-    Method 50: public: virtual long __cdecl CVirtualDesktopManager::DetermineRelativeDirectionInternal(struct IVirtualDesktop * __ptr64,struct IVirtualDesktop * __ptr64,unsigned int * __ptr64) __ptr64
-    Method 51: public: virtual long __cdecl CVirtualDesktopManager::SuspendModificationsInternal(struct IUnknown * __ptr64 * __ptr64) __ptr64
-    Method 52: public: virtual bool __cdecl CVirtualDesktopManager::AreModificationsSuspendedInternal(void) __ptr64
-    Method 53: public: virtual long __cdecl CVirtualDesktopManager::PlaceOrphanedViewsInternal(struct IVirtualDesktop * __ptr64) __ptr64
-    Method 54: public: virtual long __cdecl CVirtualDesktopManager::ViewOwnerChangedInternal(struct IApplicationView * __ptr64) __ptr64
-    Method 55: public: virtual long __cdecl CVirtualDesktopManager::MoveViewToHolographicDesktopInternal(struct IApplicationView * __ptr64) __ptr64
-    Method 56: public: virtual long __cdecl CVirtualDesktopManager::MoveViewFromHolographicDesktopInternal(struct IApplicationView * __ptr64) __ptr64
-    Method 57: public: virtual long __cdecl CVirtualDesktopManager::SetMonitorManager(struct IImmersiveMonitorManager * __ptr64) __ptr64
+    Method 41: public: virtual long __cdecl CVirtualDesktopManager::SwitchDesktop2(struct IVirtualDesktop * __ptr64,enum VirtualDesktopSwitchType) __ptr64
+    Method 42: public: virtual long __cdecl CVirtualDesktopManager::GetCountInternal(unsigned int * __ptr64) __ptr64
+    Method 43: public: virtual long __cdecl CVirtualDesktopManager::MoveViewToDesktopInternal(struct IApplicationView * __ptr64,struct IVirtualDesktop * __ptr64) __ptr64
+    Method 44: public: virtual long __cdecl CVirtualDesktopManager::MoveViewToDesktopFromApiInternal(struct IApplicationView * __ptr64,struct IVirtualDesktop * __ptr64) __ptr64
+    Method 45: public: virtual long __cdecl CVirtualDesktopManager::GetCurrentDesktopInternal(struct IVirtualDesktop * __ptr64 * __ptr64) __ptr64
+    Method 46: public: virtual long __cdecl CVirtualDesktopManager::GetDesktopsInternal(struct IObjectArray * __ptr64 * __ptr64) __ptr64
+    Method 47: public: virtual long __cdecl CVirtualDesktopManager::GetAdjacentDesktopInternal(struct IVirtualDesktop * __ptr64,unsigned int,struct IVirtualDesktop * __ptr64 * __ptr64) __ptr64
+    Method 48: public: virtual long __cdecl CVirtualDesktopManager::SwitchDesktopInternal(struct IVirtualDesktop * __ptr64) __ptr64
+    Method 49: public: virtual long __cdecl CVirtualDesktopManager::CreateDesktopInternal(struct IVirtualDesktop * __ptr64 * __ptr64) __ptr64
+    Method 50: public: virtual long __cdecl CVirtualDesktopManager::RemoveDesktopInternal(struct IVirtualDesktop * __ptr64,struct IVirtualDesktop * __ptr64) __ptr64
+    Method 51: public: virtual long __cdecl CVirtualDesktopManager::DetermineRelativeDirectionInternal(struct IVirtualDesktop * __ptr64,struct IVirtualDesktop * __ptr64,unsigned int * __ptr64) __ptr64
+    Method 52: public: virtual long __cdecl CVirtualDesktopManager::SuspendModificationsInternal(struct IUnknown * __ptr64 * __ptr64) __ptr64
+    Method 53: public: virtual bool __cdecl CVirtualDesktopManager::AreModificationsSuspendedInternal(void) __ptr64
+    Method 54: public: virtual long __cdecl CVirtualDesktopManager::PlaceOrphanedViewsInternal(struct IVirtualDesktop * __ptr64) __ptr64
+    Method 55: public: virtual long __cdecl CVirtualDesktopManager::ViewOwnerChangedInternal(struct IApplicationView * __ptr64) __ptr64
+    Method 56: public: virtual long __cdecl CVirtualDesktopManager::MoveViewToHolographicDesktopInternal(struct IApplicationView * __ptr64) __ptr64
+    Method 57: public: virtual long __cdecl CVirtualDesktopManager::MoveViewFromHolographicDesktopInternal(struct IApplicationView * __ptr64) __ptr64
+    Method 58: public: virtual long __cdecl CVirtualDesktopManager::SetMonitorManager(struct IImmersiveMonitorManager * __ptr64) __ptr64
 
 
 Dumping vftable: const CVirtualDesktopManager::`vftable'{for `Microsoft::WRL::Details::ImplementsHelper<struct Microsoft::WRL::RuntimeClassFlags<3>,1,struct Microsoft::WRL::Details::ImplementsMarker<class Microsoft::WRL::FtmBase> >'}
@@ -167,11 +173,6 @@ Dumping vftable: const CVirtualDesktopManager::`vftable'{for `Microsoft::WRL::De
     Method 16: [thunk]:public: virtual long __cdecl CVirtualDesktopManager::SetDesktopWallpaper`adjustor{16}' (struct IVirtualDesktop * __ptr64,struct HSTRING__ * __ptr64) __ptr64
     Method 17: [thunk]:public: virtual long __cdecl CVirtualDesktopManager::UpdateWallpaperPathForAllDesktops`adjustor{16}' (struct HSTRING__ * __ptr64) __ptr64
     Method 18: [thunk]:public: virtual long __cdecl CVirtualDesktopManager::CopyDesktopState`adjustor{16}' (struct IApplicationView * __ptr64,struct IApplicationView * __ptr64) __ptr64
-    Method 19: QueryInterface
-    Method 20: AddRef
-    Method 21: Release
-    Method 22: Unknown (0x1EEAC0)
-    Method 23: Unknown (0x1ECEC0)
 
 
 Dumping vftable: const CVirtualDesktopManager::`vftable'{for `IImmersiveWindowMessageNotification'}
@@ -212,7 +213,7 @@ Dumping vftable: const CVirtualDesktopManager::`vftable'{for `IVirtualDesktopMan
     Method 17: [thunk]:public: virtual long __cdecl CVirtualDesktopManager::UpdateWallpaperPathForAllDesktops`adjustor{24}' (struct HSTRING__ * __ptr64) __ptr64
     Method 18: [thunk]:public: virtual long __cdecl CVirtualDesktopManager::CopyDesktopState`adjustor{24}' (struct IApplicationView * __ptr64,struct IApplicationView * __ptr64) __ptr64
     Method 19: [thunk]:public: virtual long __cdecl CVirtualDesktopManager::CreateRemoteDesktop`adjustor{24}' (struct HSTRING__ * __ptr64,struct IVirtualDesktop * __ptr64 * __ptr64) __ptr64
-    Method 20: [thunk]:public: virtual long __cdecl CVirtualDesktopManager::SwitchRemoteDesktop`adjustor{24}' (struct IVirtualDesktop * __ptr64) __ptr64
+    Method 20: [thunk]:public: virtual long __cdecl CVirtualDesktopManager::SwitchRemoteDesktop`adjustor{24}' (struct IVirtualDesktop * __ptr64,enum VirtualDesktopSwitchType) __ptr64
     Method 21: [thunk]:public: virtual long __cdecl CVirtualDesktopManager::SwitchDesktopWithAnimation`adjustor{24}' (struct IVirtualDesktop * __ptr64) __ptr64
     Method 22: [thunk]:public: virtual long __cdecl CVirtualDesktopManager::GetLastActiveDesktop`adjustor{24}' (struct IVirtualDesktop * __ptr64 * __ptr64) __ptr64
     Method 23: [thunk]:public: virtual long __cdecl CVirtualDesktopManager::WaitForAnimationToComplete`adjustor{24}' (void) __ptr64
@@ -261,7 +262,7 @@ Dumping vftable: const CVirtualDesktopNotificationsDerived::`vftable'{for `IVirt
     Method  9: public: virtual long __cdecl VirtualDesktopNotificationForwarderHelper<class CVirtualDesktopNotifications>::ViewVirtualDesktopChanged(struct IApplicationView * __ptr64) __ptr64
     Method 10: public: virtual long __cdecl VirtualDesktopNotificationForwarderHelper<class CVirtualDesktopNotifications>::CurrentVirtualDesktopChanged(struct IVirtualDesktop * __ptr64,struct IVirtualDesktop * __ptr64) __ptr64
     Method 11: public: virtual long __cdecl VirtualDesktopNotificationForwarderHelper<class CVirtualDesktopNotifications>::VirtualDesktopWallpaperChanged(struct IVirtualDesktop * __ptr64,struct HSTRING__ * __ptr64) __ptr64
-    Method 12: public: virtual long __cdecl VirtualDesktopNotificationForwarderHelper<class CVirtualDesktopNotifications>::VirtualDesktopSwitched(struct IVirtualDesktop * __ptr64) __ptr64
+    Method 12: public: virtual long __cdecl VirtualDesktopNotificationForwarderHelper<class CVirtualDesktopNotifications>::VirtualDesktopSwitched(struct IVirtualDesktop * __ptr64,enum VirtualDesktopSwitchType) __ptr64
     Method 13: public: virtual long __cdecl VirtualDesktopNotificationForwarderHelper<class CVirtualDesktopNotifications>::RemoteVirtualDesktopConnected(struct IVirtualDesktop * __ptr64) __ptr64
 
 
@@ -313,16 +314,6 @@ Dumping vftable: const VirtualPinnedAppsHandler::`vftable'{for `Microsoft::WRL::
     Method 15: public: virtual long __cdecl VirtualPinnedAppsHandler::UnpinViewNoGroupPropagateInternal(struct IApplicationView * __ptr64,struct IVirtualDesktop * __ptr64) __ptr64
     Method 16: public: virtual int __cdecl VirtualPinnedAppsHandler::IsViewPinnedInternal(struct IApplicationView * __ptr64) __ptr64
     Method 17: ~Destructor
-    Method 18: Unknown (0x4B5EB0)
-    Method 19: Unknown (0x4B6180)
-    Method 20: Unknown (0x15B6B0)
-    Method 21: Unknown (0x19A290)
-    Method 22: Unknown (0x4B5E40)
-    Method 23: QueryInterface
-    Method 24: AddRef
-    Method 25: Release
-    Method 26: Unknown (0x197B10)
-    Method 27: Unknown (0x183320)
 
 
 Dumping vftable: const VirtualPinnedAppsHandler::`vftable'{for `Microsoft::WRL::Details::ImplementsHelper<struct Microsoft::WRL::RuntimeClassFlags<2>,1,struct Microsoft::WRL::Details::ImplementsMarker<class Microsoft::WRL::FtmBase> >'}
